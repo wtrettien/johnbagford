@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>John Bagford's Title Page Fragments</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <script>
+      $(document).ready(function(){
+          $("select.stationers").change(function(){
+              var selectedStationers = $(this).children("option:selected").val();
+              $(".thumbnail").removeClass("stationershighlight");
+              $("."+selectedStationers).addClass("stationershighlight");
+          });
+          $("select.authors").change(function(){
+              var selectedAuthors = $(this).children("option:selected").val();
+              $(".thumbnail").removeClass("authorshighlight");
+              $("."+selectedAuthors).addClass("authorshighlight");
+          });
+          $("select.type").change(function(){
+              var selectedType = $(this).children("option:selected").val();
+              $(".thumbnail").removeClass("typehighlight");
+              $("."+selectedType).addClass("typehighlight");
+          });
+          var handle = $( "#custom-handle" );
+              $( "#slider" ).slider({
+                create: function() {
+                  handle.text( $( this ).slider( "value" ) );
+                },
+                slide: function( event, ui ) {
+                  handle.text( ui.value );
+                },
+                value: 1520,
+                min: 1509,
+                max: 1712,
+              });
+          $( "#slider" ).on( "slide", function( event, ui ) {
+            var selection = $( "#slider" ).slider( "value" );
+            $(".thumbnail").removeClass("daterangehighlight");
+            $("."+selection).addClass("daterangehighlight");
+          } );
+      })
+    </script>
+    <style>
+      body{
+        background-image: linear-gradient(#505050, #000000 5%);
+      }
+      form{
+        display:inline-block;
+        padding-right: 20px;
+      }
+      #forms{
+        width:100vw;
+        height:40px;
+        color: white;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.6em;
+        padding-left: 20px;
+      }
+      h2{
+        color: white;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 3em;
+        border-bottom: 5px #404040 double;
+        margin: 0;
+        padding: 0;
+      }
+      .thumbnail{
+          height: 80px;
+          float:left;
+          border: 5px black solid;
+      }
+      .stationershighlight{
+        border: 5px #1da4a2 solid;
+      }
+      .authorshighlight{
+        border: 5px #a997df solid;
+      }
+      .daterangehighlight{
+        border: 5px #e5323b solid;
+      }
+      .typehighlight{
+        border: 5px #d5d82c solid;
+      }
+      #custom-handle {
+        width: 3em;
+        height: 1.6em;
+        top: 50%;
+        margin-top: -.8em;
+        text-align: center;
+        line-height: 1.6em;
+      }
+      #slider{
+        width: 350px;
+        display:inline-block;
+      }
+      p{
+        color: #e8e8e8;
+        padding-left: 40px;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+      a{
+        color: #e5323b;
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>John Bagford's Collection of Title Pages</h2>
+    <p>
+      You are looking at an album pasted with fragments, mostly sixteenth- and seventeenth-century English title pages. It was assembled by John Bagford in the early eighteenth century and forms one among hundreds of similar volumes in which he collected items related to the history of text technologies. Most are now at the British Library; this is MS Harley 5927.
+    </p>
+    <p>
+      In 1974, using index cards that became punched cards fed into an IBM System/360 Model 67 computer, Melvin Wolf published a catalogue of the fragments in Bagford’s volumes, including this one. He focused especially on the title pages that Bagford collected. We the editors of this website &mdash; Penny Bee, Lauren Kim, and Whitney Trettien &mdash; have digitized and carefully updated Wolf’s work. Using electronic databases, we were able to identify hundreds of further title pages. You can <a href="https://docs.google.com/spreadsheets/d/1y-Na8FCdbtuR_77GjrTUtHTRldAc4bWHzlGo5bw-rJo/edit?usp=sharing" target="_blank">view</a> or <a href="https://github.com/wtrettien/johnbagford" target="_blank">download</a> that dataset.
+    </p>
+	  <p>
+      Below is a simple visualization of that data, in relation to the material placement of fragments in Bagford's album. To explore, use the dropdown menus or date slider. Doing so will highlight, in the corresponding color, the  pages pasted with those fragments printed, published, or written by that person or on that date. Clicking on the highlighted page will open a larger facsimile with attendant metadata in a <a href="https://digitalbookhistory.com/johnbagford/" target="_blank">separate Omeka archive</a>, or you can peruse the entire volume and its fragments there.
+    </p>
+    <div id="forms">
+    <form>
+      <label><span style="border-bottom: 3px #1da4a2 solid">Stationer</span></label>
+        <select class="stationers">
+          <option value="">--</option>
+          <option value="AN">A. N.</option>
+          <option value="AbelSwalle">Abel Swalle</option>
+          <option value="AbrahamVele">Abraham Vele</option>
+          <option value="AdamIslip">Adam Islip</option>
+          <option value="AegidioCalbert">Aegidio Calbert</option>
+          <option value="AmbroseGarbrand">Ambrose Garbrand</option>
+          <option value="AndrewCrook">Andrew Crook</option>
+          <option value="AndrewHebb">Andrew Hebb</option>
+          <option value="AnneGriffin">Anne Griffin</option>
+          <option value="AntonyKitson">Antony Kitson</option>
+          <option value="ArnoldHatfield">Arnold Hatfield</option>
+          <option value="ArthurJohnson">Arthur Johnson</option>
+          <option value="AugustineLawton">Augustine Lawton</option>
+          <option value="AugustineMatthews">Augustine Matthews</option>
+          <option value="BI">B. I.</option>
+          <option value="BenjaminFisher">Benjamin Fisher</option>
+          <option value="BenjaminTooke">Benjamin Tooke</option>
+          <option value="BenjaminWalford">Benjamin Walford</option>
+          <option value="BernardAlsop">Bernard Alsop</option>
+          <option value="CharlesBrome">Charles Brome</option>
+          <option value="CharlesGreen">Charles Green</option>
+          <option value="ChristoffelvanRuremund">Christoffel van Ruremund</option>
+          <option value="ChristopherBarker">Christopher Barker</option>
+          <option value="ChristopherMeredith">Christopher Meredith</option>
+          <option value="ClementKnight">Clement Knight</option>
+          <option value="CuthbertBurbie">Cuthbert Burbie</option>
+          <option value="DM">D. M.</option>
+          <option value="Maxwell">D. Maxwell</option>
+          <option value="DixyPage">Dixy Page</option>
+          <option value="EM">E. M.</option>
+          <option value="EWhitlock">E. Whitlock</option>
+          <option value="EdmC">Edm. C.</option>
+          <option value="EdmundBollifant">Edmund Bollifant</option>
+          <option value="EdmundMutton">Edmund Mutton</option>
+          <option value="EdmundWeaver">Edmund Weaver</option>
+          <option value="EdwardAllde">Edward Allde</option>
+          <option value="EdwardBlount">Edward Blount</option>
+          <option value="EdwardBrewster">Edward Brewster</option>
+          <option value="EdwardGriffin">Edward Griffin</option>
+          <option value="EdwardMottershed">Edward Mottershed</option>
+          <option value="EdwardWhite">Edward White</option>
+          <option value="EliotsCourtPress">Eliot's Court Press</option>
+          <option value="ElizabethBurbie">Elizabeth Burbie</option>
+          <option value="ElizabethPurslowe">Elizabeth Purslowe</option>
+          <option value="EnochWyer">Enoch Wyer</option>
+          <option value="FelixKingston">Felix Kingston</option>
+          <option value="FrancisConstable">Francis Constable</option>
+          <option value="FrancisEglesfield">Francis Eglesfield</option>
+          <option value="FranciscoColdock">Francisco Coldock</option>
+          <option value="FranzBirckman">Franz Birckman</option>
+          <option value="GDexter">G. Dexter</option>
+          <option value="GW">G. W.</option>
+          <option value="GeorgeAnderson">George Anderson</option>
+          <option value="GeorgeBishop">George Bishop</option>
+          <option value="GeorgeCalvert">George Calvert</option>
+          <option value="GeorgeEld">George Eld</option>
+          <option value="GeorgeLathum">George Lathum</option>
+          <option value="GeorgeMiller">George Miller</option>
+          <option value="GeorgeNorton">George Norton</option>
+          <option value="GeorgePurslowe">George Purslowe</option>
+          <option value="GeorgeSawbridge">George Sawbridge</option>
+          <option value="GeorgeSnowdon">George Snowdon</option>
+          <option value="GeorgeWells">George Wells</option>
+          <option value="GerardDewes">Gerard Dewes</option>
+          <option value="GiacopoCasteluetri">Giacopo Casteluetri</option>
+          <option value="GilesCalvert">Giles Calvert</option>
+          <option value="GiovanniVolfeo">Giovanni Volfeo</option>
+          <option value="GregorySeton">Gregory Seton</option>
+          <option value="HC">H. C.</option>
+          <option value="HH">H. H.</option>
+          <option value="HHills">H. Hills</option>
+          <option value="HLloyd">H. Lloyd</option>
+          <option value="HenryAtkinson">Henry Atkinson</option>
+          <option value="HenryBallard">Henry Ballard</option>
+          <option value="HenryBonwick">Henry Bonwick</option>
+          <option value="HenryBynneman">Henry Bynneman</option>
+          <option value="HenryCarre">Henry Carre</option>
+          <option value="HenryCripps">Henry Cripps</option>
+          <option value="HenryCurteyn">Henry Curteyn</option>
+          <option value="HenryDenham">Henry Denham</option>
+          <option value="HenryFeatherstone">Henry Featherstone</option>
+          <option value="HenryFrancis">Henry Francis</option>
+          <option value="HenryHall">Henry Hall</option>
+          <option value="HenryHerringman">Henry Herringman</option>
+          <option value="HenryHooke">Henry Hooke</option>
+          <option value="HenryKirkham">Henry Kirkham</option>
+          <option value="HenryLownes">Henry Lownes</option>
+          <option value="HenryMiddleton">Henry Middleton</option>
+          <option value="HenrySeile">Henry Seile</option>
+          <option value="HughJackson">Hugh Jackson</option>
+          <option value="HumfreyToy">Humfrey Toy</option>
+          <option value="HumphreyLownes">Humphrey Lownes</option>
+          <option value="HumphreyMoseley">Humphrey Moseley</option>
+          <option value="HumphreyRobinson">Humphrey Robinson</option>
+          <option value="IBing">I. Bing</option>
+          <option value="JBaker">J. Baker</option>
+          <option value="JFlesher">J. Flesher</option>
+          <option value="JG">J. G.</option>
+          <option value="JHaviland">J. Haviland</option>
+          <option value="JL">J. L.</option>
+          <option value="JMacock">J. Macock</option>
+          <option value="JPhillips">J. Phillips</option>
+          <option value="JR">J. R.</option>
+          <option value="JTaylor">J. Taylor</option>
+          <option value="JWilliams">J. Williams</option>
+          <option value="JWright">J. Wright</option>
+          <option value="JN">J.N.</option>
+          <option value="JacobJuni">Jacob Juni</option>
+          <option value="JacobTonson">Jacob Tonson</option>
+          <option value="JacobusRimeus">Jacobus Rimeus</option>
+          <option value="JamesAllestry">James Allestry</option>
+          <option value="JamesBoler">James Boler</option>
+          <option value="JamesRoberts">James Roberts</option>
+          <option value="JamesRound">James Round</option>
+          <option value="JasperEmery">Jasper Emery</option>
+          <option value="JohnBartlet">John Bartlet</option>
+          <option value="JohnBeale">John Beale</option>
+          <option value="JohnBenson">John Benson</option>
+          <option value="JohnBill">John Bill</option>
+          <option value="JohnBrowne">John Browne</option>
+          <option value="JohnCawood">John Cawood</option>
+          <option value="JohnCharlewood">John Charlewood</option>
+          <option value="JohnClowes">John Clowes</option>
+          <option value="JohnCrook">John Crook</option>
+          <option value="JohnCrump">John Crump</option>
+          <option value="JohnDawson">John Dawson</option>
+          <option value="JohnField">John Field</option>
+          <option value="JohnFlasket">John Flasket</option>
+          <option value="JohnGrismond">John Grismond</option>
+          <option value="JohnHarrison">John Harrison</option>
+          <option value="JohnHaviland">John Haviland</option>
+          <option value="JohnHerforde">John Herforde</option>
+          <option value="JohnI">John I.</option>
+          <option value="John Jackson">John Jackson</option>
+          <option value="JohnJones">John Jones</option>
+          <option value="JohnKingston">John Kingston</option>
+          <option value="JohnNorton">John Norton</option>
+          <option value="JohnNutt">John Nutt</option>
+          <option value="JohnOkes">John Okes</option>
+          <option value="JohnParker">John Parker</option>
+          <option value="JohnPerin">John Perin</option>
+          <option value="JohnRothwell">John Rothwell</option>
+          <option value="JohnSalusbury">John Salusbury</option>
+          <option value="JohnShepperde">John Shepperde</option>
+          <option value="JohnStreater">John Streater</option>
+          <option value="JohnWight">John Wight</option>
+          <option value="JohnWilliams">John Williams</option>
+          <option value="JohnWindet">John Windet</option>
+          <option value="JohnWolfe">John Wolfe</option>
+          <option value="JohnWoodcock">John Woodcock</option>
+          <option value="JohnWyat">John Wyat</option>
+          <option value="JoshuaKirton">Joshua Kirton</option>
+          <option value="JoyceNorton">Joyce Norton</option>
+          <option value="JulianNotary">Julian Notary</option>
+          <option value="LSadler">L. Sadler</option>
+          <option value="LaurenceLisle">Laurence Lisle</option>
+          <option value="LucasHarrison">Lucas Harrison</option>
+          <option value="MClark">M. Clark</option>
+          <option value="MF">M. F.</option>
+          <option value="MH">M. H.</option>
+          <option value="MOkes">M. Okes</option>
+          <option value="MWhite">M. White</option>
+          <option value="MartinBlake">Martin Blake</option>
+          <option value="MatthewLaw">Matthew Law</option>
+          <option value="MatthewLownes">Matthew Lownes</option>
+          <option value="MelchisedechumBradwood">Melchisedechum Bradwood</option>
+          <option value="MichaelemHilleniumHoochstratanum">Michaelem Hillenium Hoochstratanum</option>
+          <option value="MilesFlesher">Miles Flesher</option>
+          <option value="NathanaelRanew">Nathanael Ranew</option>
+          <option value="NathanaelisFosbrooke">Nathanaelis Fosbrooke</option>
+          <option value="NathanielButter">Nathaniel Butter</option>
+          <option value="NathanielFosbroke">Nathaniel Fosbroke</option>
+          <option value="NathanielPonder">Nathaniel Ponder</option>
+          <option value="NevillSimons">Nevill Simons</option>
+          <option value="NicholasHill">Nicholas Hill</option>
+          <option value="NicholasLyng">Nicholas Lyng</option>
+          <option value="NicholasOkes">Nicholas Okes</option>
+          <option value="ObadiahBlagrave">Obadiah Blagrave</option>
+          <option value="PeterParker">Peter Parker</option>
+          <option value="PeterShort">Peter Short</option>
+          <option value="PeterWhaley">Peter Whaley</option>
+          <option value="PhilemonStephens">Philemon Stephens</option>
+          <option value="PhilipNevill">Philip Nevill</option>
+          <option value="PrinterstotheUniversityofCambridge">Printers to the University of Cambridge</option>
+          <option value="RA">R. A.</option>
+          <option value="RAllot">R. Allot</option>
+          <option value="RBourne">R. Bourne</option>
+          <option value="RBradock">R. Bradock</option>
+          <option value="RCoates">R. Coates</option>
+          <option value="RIbbitson">R. Ibbitson</option>
+          <option value="ROulton">R. Oulton</option>
+          <option value="RalphMab">Ralph Mab</option>
+          <option value="RalphNewberry">Ralph Newberry</option>
+          <option value="RalphSmith">Ralph Smith</option>
+          <option value="RandallTaylor">Randall Taylor</option>
+          <option value="ReginaldWolfe">Reginald Wolfe</option>
+          <option value="RichardBadger">Richard Badger</option>
+          <option value="RichardBentley">Richard Bentley</option>
+          <option value="RichardBishop">Richard Bishop</option>
+          <option value="RichardBraddock">Richard Braddock</option>
+          <option value="RichardBunnian">Richard Bunnian</option>
+          <option value="RichardChiswell">Richard Chiswell</option>
+          <option value="RichardDay">Richard Day</option>
+          <option value="RichardField">Richard Field</option>
+          <option value="RichardHutton">Richard Hutton</option>
+          <option value="RichardJanua">Richard Janua</option>
+          <option value="RichardJones">Richard Jones</option>
+          <option value="RichardJugge">Richard Jugge</option>
+          <option value="RichardLownes">Richard Lownes</option>
+          <option value="RichardMarriott">Richard Marriott</option>
+          <option value="RichardMeighen">Richard Meighen</option>
+          <option value="RichardMoore">Richard Moore</option>
+          <option value="RichardParker">Richard Parker</option>
+          <option value="RichardRedmer">Richard Redmer</option>
+          <option value="RichardRoyston">Richard Royston</option>
+          <option value="RichardSerger">Richard Serger</option>
+          <option value="RichardSerl">Richard Serl</option>
+          <option value="RichardThrale">Richard Thrale</option>
+          <option value="RichardTottel">Richard Tottel</option>
+          <option value="RichardWatkins">Richard Watkins</option>
+          <option value="RichardWhittaker">Richard Whittaker</option>
+          <option value="RobertBird">Robert Bird</option>
+          <option value="RobertBostock">Robert Bostock</option>
+          <option value="RobertBoulter">Robert Boulter</option>
+          <option value="RobertDexter">Robert Dexter</option>
+          <option value="RobertMilbourne">Robert Milbourne</option>
+          <option value="RobertRobinson">Robert Robinson</option>
+          <option value="RobertSollers">Robert Sollers</option>
+          <option value="RobertTrot">Robert Trot</option>
+          <option value="RobertWaldegrave">Robert Waldegrave</option>
+          <option value="RobertWhite">Robert White</option>
+          <option value="RobertYoung">Robert Young</option>
+          <option value="RoberteToye">Roberte Toye</option>
+          <option value="RogerDaniel">Roger Daniel</option>
+          <option value="RogerJackson">Roger Jackson</option>
+          <option value="RogerNorton">Roger Norton</option>
+          <option value="SManship">S. Manship</option>
+          <option value="SRoycroft">S. Roycroft</option>
+          <option value="SamuelGellibrand">Samuel Gellibrand</option>
+          <option value="SamuelMacham">Samuel Macham</option>
+          <option value="SamuelRavenshaw">Samuel Ravenshaw</option>
+          <option value="SamuelSatterthwaite">Samuel Satterthwaite</option>
+          <option value="SamuelSmith">Samuel Smith</option>
+          <option value="SamuelThomson">Samuel Thomson</option>
+          <option value="SimonStafford">Simon Stafford</option>
+          <option value="TAdams">T. Adams</option>
+          <option value="TBassett">T. Bassett</option>
+          <option value="TBrewster">T. Brewster</option>
+          <option value="TH">T. H.</option>
+          <option value="TK">T. K.</option>
+          <option value="TPaine">T. Paine</option>
+          <option value="TR">T. R. </option>
+          <option value="TH">T.H.</option>
+          <option value="TJ">T.J.</option>
+          <option value="ThomasAlcorn">Thomas Alcorn</option>
+          <option value="ThomasBennet">Thomas Bennet</option>
+          <option value="ThomasBushell">Thomas Bushell</option>
+          <option value="ThomasChapman">Thomas Chapman</option>
+          <option value="ThomasChard">Thomas Chard</option>
+          <option value="ThomasCotes">Thomas Cotes</option>
+          <option value="ThomasCreed">Thomas Creed</option>
+          <option value="ThomasDavies">Thomas Davies</option>
+          <option value="ThomasDawkes">Thomas Dawkes</option>
+          <option value="ThomasDawson">Thomas Dawson</option>
+          <option value="ThomasEast">Thomas East</option>
+          <option value="ThomasGubbin">Thomas Gubbin</option>
+          <option value="ThomasHarper">Thomas Harper</option>
+          <option value="ThomasHaveland">Thomas Haveland</option>
+          <option value="ThomasJudson">Thomas Judson</option>
+          <option value="ThomasKnight">Thomas Knight</option>
+          <option value="ThomasMabb">Thomas Mabb</option>
+          <option value="ThomasMan">Thomas Man</option>
+          <option value="ThomasMercer">Thomas Mercer</option>
+          <option value="ThomasOrwin">Thomas Orwin</option>
+          <option value="ThomasParkhurst">Thomas Parkhurst</option>
+          <option value="ThomasPetyt">Thomas Petyt</option>
+          <option value="ThomasPurfoot">Thomas Purfoot</option>
+          <option value="ThomasPursut">Thomas Pursut</option>
+          <option value="ThomasRatcliffe">Thomas Ratcliffe</option>
+          <option value="ThomasRobinson">Thomas Robinson</option>
+          <option value="ThomasRooks">Thomas Rooks</option>
+          <option value="ThomasSalusbury">Thomas Salusbury</option>
+          <option value="ThomasSawbridge">Thomas Sawbridge</option>
+          <option value="ThomasSnodham">Thomas Snodham</option>
+          <option value="ThomasVautrollier">Thomas Vautrollier</option>
+          <option value="ThomasWarren">Thomas Warren</option>
+          <option value="ThomasWhittaker">Thomas Whittaker</option>
+          <option value="ThomasWoodcock">Thomas Woodcock</option>
+          <option value="TimothyChilde">Timothy Childe</option>
+          <option value="TimothyGarthwait">Timothy Garthwait</option>
+          <option value="ValentineSims">Valentine Sims</option>
+          <option value="WAspley">W. Aspley</option>
+          <option value="WCotton">W. Cotton</option>
+          <option value="WGodbid">W. Godbid</option>
+          <option value="WalterBurre">Walter Burre</option>
+          <option value="WalterKettilby">Walter Kettilby</option>
+          <option value="WidowOrwin">Widow Orwin</option>
+          <option value="WilliamAspley">William Aspley</option>
+          <option value="WilliamBarret">William Barret</option>
+          <option value="WilliamBrome">William Brome</option>
+          <option value="WilliamCooper">William Cooper</option>
+          <option value="WilliamHall">William Hall</option>
+          <option value="WilliamHill">William Hill</option>
+          <option value="WilliamJaggard">William Jaggard</option>
+          <option value="WilliamJohns">William Johns</option>
+          <option value="WilliamJones">William Jones</option>
+          <option value="WilliamLeake">William Leake</option>
+          <option value="WilliamNorton">William Norton</option>
+          <option value="WilliamPonsonby">William Ponsonby</option>
+          <option value="WilliamSeres">William Seres</option>
+          <option value="WilliamStansby">William Stansby</option>
+          <option value="WilliamWelby">William Welby</option>
+          <option value="WilliamWood">William Wood</option>
+        </select>
+    </form>
+    <form>
+      <label><span style="border-bottom: 3px #a997df solid">Author</span></label>
+        <select class="authors">
+          <option value="">--</option>
+          <option value="AT">A. T. </option>
+          <option value="abbédeVertot">abbé de Vertot</option>
+          <option value="AbelRoper">Abel Roper</option>
+          <option value="AbrahamFleming">Abraham Fleming</option>
+          <option value="AbrahamFraunce">Abraham Fraunce</option>
+          <option value="AdamLittleton">Adam Littleton</option>
+          <option value="AdamShewring">Adam Shewring</option>
+          <option value="AgricolaCarpenter">Agricola Carpenter</option>
+          <option value="AlexanderNowell">Alexander Nowell</option>
+          <option value="AlexanderRead">Alexander Read</option>
+          <option value="AmbroiseParé">Ambroise Paré</option>
+          <option value="AndrewWillet">Andrew Willet</option>
+          <option value="AnneAskew">Anne Askew</option>
+          <option value="AnthonySadler">Anthony Sadler</option>
+          <option value="AnthonyWotton">Anthony Wotton</option>
+          <option value="AntoniodelCorro">Antonio del Corro</option>
+          <option value="AntoniusCorvinus">Antonius Corvinus</option>
+          <option value="Appianus">Appianus</option>
+          <option value="Aristotle">Aristotle</option>
+          <option value="ArthurBache">Arthur Bache</option>
+          <option value="ArthurBrooke">Arthur Brooke</option>
+          <option value="ArthurStandish">Arthur Standish</option>
+          <option value="BaldassarreCastiglione">Baldassarre Castiglione</option>
+          <option value="BattistaGuarini">Battista Guarini</option>
+          <option value="BenJonson">Ben Jonson</option>
+          <option value="BenjaminLaney">Benjamin Laney</option>
+          <option value="BertranddeLoque">Bertrand de Loque</option>
+          <option value="BevillTurmiger">Bevill Turmiger</option>
+          <option value="Boethius">Boethius</option>
+          <option value="CharlesGibbon">Charles Gibbon</option>
+          <option value="CharlesMolloy">Charles Molloy</option>
+          <option value="ChristopherHooke">Christopher Hooke</option>
+          <option value="ChristopherOcland">Christopher Ocland</option>
+          <option value="ChristopherSutton">Christopher Sutton</option>
+          <option value="ClaudiusHollyband">Claudius Hollyband</option>
+          <option value="ClementEdmondes">Clement Edmondes</option>
+          <option value="CorneliusAntoniszoon ">Cornelius Antoniszoon </option>
+          <option value="CristóbaldeFonseca">Cristóbal de Fonseca</option>
+          <option value="DanielCawdrey">Daniel Cawdrey</option>
+          <option value="DanielFeatley">Daniel Featley</option>
+          <option value="DanielStahl">Daniel Stahl</option>
+          <option value="DavidDickson">David Dickson</option>
+          <option value="Demosthenes">Demosthenes</option>
+          <option value="DesideriusErasmus">Desiderius Erasmus</option>
+          <option value="EdmundGostlin">Edmund Gostlin</option>
+          <option value="EdmundSpenser">Edmund Spenser</option>
+          <option value="EdmundTilney">Edmund Tilney</option>
+          <option value="EdwardBrerewood">Edward Brerewood</option>
+          <option value="EdwardDering">Edward Dering</option>
+          <option value="EdwardElton">Edward Elton</option>
+          <option value="EdwardGrant">Edward Grant</option>
+          <option value="EdwardHoby">Edward Hoby</option>
+          <option value="EdwardPhilips">Edward Philips</option>
+          <option value="EphraimPagitt">Ephraim Pagitt</option>
+          <option value="Euclid">Euclid</option>
+          <option value="EverardDigby">Everard Digby</option>
+          <option value="FernandodeTejeda">Fernando de Tejeda</option>
+          <option value="FrancisBacon">Francis Bacon</option>
+          <option value="FrancisCheynell">Francis Cheynell</option>
+          <option value="FrancisMeres">Francis Meres</option>
+          <option value="FrancisQuarles">Francis Quarles</option>
+          <option value="FrancisRoberts">Francis Roberts</option>
+          <option value="FrancisRous">Francis Rous</option>
+          <option value="FrancoPetriBurgersdijk">Franco Petri Burgersdijk</option>
+          <option value="FrançoisHotman">François Hotman</option>
+          <option value="FrancoisMauriceau">Francois Mauriceau</option>
+          <option value="FriedrichBeurhaus">Friedrich Beurhaus</option>
+          <option value="GabrielHarvey">Gabriel Harvey</option>
+          <option value="GabrielPowel">Gabriel Powel</option>
+          <option value="GaspardeLoarte">Gaspar de Loarte</option>
+          <option value="GeorgeAbbot">George Abbot</option>
+          <option value="GeorgeBate">George Bate</option>
+          <option value="GeorgeBuchanan">George Buchanan</option>
+          <option value="GeorgeBuck">George Buck</option>
+          <option value="GeorgeBuddle">George Buddle</option>
+          <option value="GeorgeCarleton">George Carleton</option>
+          <option value="GeorgeDowname">George Downame</option>
+          <option value="GeorgeMorley">George Morley</option>
+          <option value="GeorgePhillips">George Phillips</option>
+          <option value="GeorgeWebbe">George Webbe</option>
+          <option value="GerrardWinstanley">Gerrard Winstanley</option>
+          <option value="GervaseBabington">Gervase Babington</option>
+          <option value="GiambattistadellaPorta">Giambattista della Porta</option>
+          <option value="GiovanniBattistaGelli">Giovanni Battista Gelli</option>
+          <option value="GiovanniCroce">Giovanni Croce</option>
+          <option value="GiovannidaVigo">Giovanni da Vigo</option>
+          <option value="GregorioLeti">Gregorio Leti</option>
+          <option value="GryffithWilliams">Gryffith Williams</option>
+          <option value="GuillaumedeSallusteDuBartas">Guillaume de Salluste Du Bartas</option>
+          <option value="GuillaumeMorel">Guillaume Morel</option>
+          <option value="GuillermusParisiensis">Guillermus Parisiensis</option>
+          <option value="HM">H. M.</option>
+          <option value="HeinrichBullinger">Heinrich Bullinger</option>
+          <option value="Heliodorus">Heliodorus</option>
+          <option value="HenochClapham">Henoch Clapham</option>
+          <option value="HenryArthington">Henry Arthington</option>
+          <option value="HenryDanvers">Henry Danvers</option>
+          <option value="HenryHaggar">Henry Haggar</option>
+          <option value="HenryHammond">Henry Hammond</option>
+          <option value="HenrySmith">Henry Smith</option>
+          <option value="HenryWright">Henry Wright</option>
+          <option value="HermanMoll">Herman Moll.</option>
+          <option value="HieronymusZanchius">Hieronymus Zanchius</option>
+          <option value="HumfryVincent">Humfry Vincent</option>
+          <option value="InnocentGentillet">Innocent Gentillet</option>
+          <option value="JW">J. W.</option>
+          <option value="JamesCalfhill">James Calfhill</option>
+          <option value="JamesGodskall">James Godskall</option>
+          <option value="JamesLowde">James Lowde</option>
+          <option value="JamesUssher">James Ussher</option>
+          <option value="JanvanderNoot">Jan van der Noot</option>
+          <option value="JeanCalvin">Jean Calvin</option>
+          <option value="JeandeHainault">Jean de Hainault</option>
+          <option value="JeandeMarconville">Jean de Marconville</option>
+          <option value="JeremiahDyke">Jeremiah Dyke</option>
+          <option value="JeremyTaylor">Jeremy Taylor</option>
+          <option value="JoanPowel">Joan Powel</option>
+          <option value="JoannesRavisiusTextor">Joannes Ravisius Textor</option>
+          <option value="JoannesSusenbrotus">Joannes Susenbrotus</option>
+          <option value="JodocusStimpelius">Jodocus Stimpelius</option>
+          <option value="JohannAmosComenius">Johann Amos Comenius</option>
+          <option value="JohannHabermann">Johann Habermann</option>
+          <option value="JohannPiscator">Johann Piscator</option>
+          <option value="JohannSpangenberg">Johann Spangenberg</option>
+          <option value="JohannStier">Johann Stier</option>
+          <option value="JohannesBrenz">Johannes Brenz</option>
+          <option value="JohannesPolyanderàKerckhoven">Johannes Polyander à Kerckhoven</option>
+          <option value="JohnBainbridge">John Bainbridge</option>
+          <option value="JohnBaret">John Baret</option>
+          <option value="JohnClarke">John Clarke</option>
+          <option value="JohnClerk">John Clerk</option>
+          <option value="JohnCosyn">John Cosyn</option>
+          <option value="JohnCotton">John Cotton</option>
+          <option value="JohnDod">John Dod</option>
+          <option value="JohnDolben">John Dolben</option>
+          <option value="JohnEliot">John Eliot</option>
+          <option value="JohnFidoe">John Fidoe</option>
+          <option value="JohnFlorio">John Florio</option>
+          <option value="JohnFoord">John Foord</option>
+          <option value="JohnFoxe">John Foxe</option>
+          <option value="JohnFry">John Fry</option>
+          <option value="JohnGauden">John Gauden</option>
+          <option value="JohnGeree">John Geree</option>
+          <option value="JohnGibson">John Gibson</option>
+          <option value="JohnGregory">John Gregory</option>
+          <option value="JohnHayward">John Hayward</option>
+          <option value="JohnHuise">John Huise</option>
+          <option value="JohnHuise">John Huise</option>
+          <option value="JohnJewel">John Jewel</option>
+          <option value="JohnKnewstubs">John Knewstubs</option>
+          <option value="JohnLeech">John Leech</option>
+          <option value="JohnLeland">John Leland</option>
+          <option value="JohnLilburne">John Lilburne</option>
+          <option value="JohnMilner">John Milner</option>
+          <option value="JohnMilton">John Milton</option>
+          <option value="JohnMonro">John Monro</option>
+          <option value="JohnNapier">John Napier</option>
+          <option value="JohnNorris">John Norris</option>
+          <option value="JohnPrideaux">John Prideaux</option>
+          <option value="JohnPym">John Pym</option>
+          <option value="JohnRainolds">John Rainolds</option>
+          <option value="JohnRaymond">John Raymond</option>
+          <option value="JohnRichardson">John Richardson</option>
+          <option value="JohnSadler">John Sadler</option>
+          <option value="JohnSaltmarsh">John Saltmarsh</option>
+          <option value="JohnSanford">John Sanford</option>
+          <option value="JohnSleidan">John Sleidan</option>
+          <option value="JohnStanbridge">John Stanbridge</option>
+          <option value="JohnStevens">John Stevens</option>
+          <option value="JohnStockwood">John Stockwood</option>
+          <option value="JohnTichborne">John Tichborne</option>
+          <option value="JohnUdall">John Udall</option>
+          <option value="JohnWarr">John Warr</option>
+          <option value="JohnWebster">John Webster</option>
+          <option value="JohnWhite">John White</option>
+          <option value="JohnWhitgift">John Whitgift</option>
+          <option value="JohnWilkins">John Wilkins</option>
+          <option value="JohnWillis">John Willis</option>
+          <option value="JohnWoolton">John Woolton</option>
+          <option value="JorgedeMontemayor">Jorge de Montemayor</option>
+          <option value="JosephHall">Joseph Hall</option>
+          <option value="JosephMede">Joseph Mede</option>
+          <option value="KarlLudwig">Karl Ludwig</option>
+          <option value="LancelotAndrewes">Lancelot Andrewes</option>
+          <option value="LaurenceHumphrey">Laurence Humphrey</option>
+          <option value="LeSylvain">Le Sylvain</option>
+          <option value="LeonardDigges">Leonard Digges</option>
+          <option value="LeonardSowerby">Leonard Sowerby</option>
+          <option value="LevinusLemnius">Levinus Lemnius</option>
+          <option value="LewisEvans">Lewis Evans</option>
+          <option value="LodowickLloyd">Lodowick Lloyd</option>
+          <option value="LouisElliesDupin">Louis Ellies Dupin</option>
+          <option value="LuciusAnnaeusSeneca">Lucius Annaeus Seneca</option>
+          <option value="MD">M. D.</option>
+          <option value="MTulliusCicero">M. Tullius Cicero</option>
+          <option value="MantuanusBaptista">Mantuanus Baptista</option>
+          <option value="MarcelloPalingenioStellato">Marcello Palingenio Stellato</option>
+          <option value="MarcusJunianusJustinus">Marcus Junianus Justinus</option>
+          <option value="MarcusTulliusCicero">Marcus Tullius Cicero</option>
+          <option value="MartinBlake">Martin Blake</option>
+          <option value="MartinFotherby">Martin Fotherby</option>
+          <option value="MartinoMartini">Martino Martini</option>
+          <option value="MathewStoneham">Mathew Stoneham</option>
+          <option value="MatthewGwinne">Matthew Gwinne</option>
+          <option value="MatthewSutcliffe">Matthew Sutcliffe</option>
+          <option value="MatthewWren">Matthew Wren</option>
+          <option value="MatthiasLeius">Matthias Leius</option>
+          <option value="MatthieuVirel">Matthieu Virel</option>
+          <option value="MichaelDrayton">Michael Drayton</option>
+          <option value="MilesMosse">Miles Mosse</option>
+          <option value="Misodiaboles">Misodiaboles</option>
+          <option value="MortonEudes">Morton Eudes</option>
+          <option value="MosesPflacher">Moses Pflacher</option>
+          <option value="NBradshawe">N. Bradshawe</option>
+          <option value="NathanaelHomes">Nathanael Homes</option>
+          <option value="NehemiahRogers">Nehemiah Rogers</option>
+          <option value="NicolasVignier">Nicolas Vignier</option>
+          <option value="NielsHemmingsen">Niels Hemmingsen</option>
+          <option value="OliverOrmerod">Oliver Ormerod</option>
+          <option value="Ovid">Ovid</option>
+          <option value="PL">P. L.</option>
+          <option value="PaoloManuzio">Paolo Manuzio</option>
+          <option value="PatrickHannay">Patrick Hannay</option>
+          <option value="PeterChamberlen">Peter Chamberlen</option>
+          <option value="PeterMoffett">Peter Moffett</option>
+          <option value="PhilibertdeVienne">Philibert de Vienne</option>
+          <option value="PhilippedeMornay">Philippe de Mornay</option>
+          <option value="PhilippusFerrarius">Philippus Ferrarius</option>
+          <option value="PierreDuPloiche">Pierre Du Ploiche</option>
+          <option value="PierreViret">Pierre Viret</option>
+          <option value="PietroMartireVermigli">Pietro Martire Vermigli</option>
+          <option value="PubliusOvidiusNaso">Publius Ovidius Naso</option>
+          <option value="RS">R. S. </option>
+          <option value="RalphCudworth">Ralph Cudworth</option>
+          <option value="RandleCotgrave">Randle Cotgrave</option>
+          <option value="ReginaldScot">Reginald Scot</option>
+          <option value="RichardAllestree">Richard Allestree</option>
+          <option value="RichardBarckley">Richard Barckley</option>
+          <option value="RichardBaxter">Richard Baxter</option>
+          <option value="RichardBernard">Richard Bernard</option>
+          <option value="RichardBrathwait">Richard Brathwait</option>
+          <option value="RichardCosin">Richard Cosin</option>
+          <option value="RichardGreenham">Richard Greenham</option>
+          <option value="RichardHarvey">Richard Harvey</option>
+          <option value="RichardJones">Richard Jones</option>
+          <option value="RichardKilburne">Richard Kilburne</option>
+          <option value="RichardKnolles">Richard Knolles</option>
+          <option value="RichardLee">Richard Lee</option>
+          <option value="RichardMadox">Richard Madox</option>
+          <option value="RichardMayo">Richard Mayo</option>
+          <option value="RichardMiddleton">Richard Middleton</option>
+          <option value="RichardParr">Richard Parr</option>
+          <option value="RobertArnaulddAndilly">Robert Arnauld d'Andilly</option>
+          <option value="RobertBarret">Robert Barret</option>
+          <option value="RobertBolton">Robert Bolton</option>
+          <option value="RobertBoreman">Robert Boreman</option>
+          <option value="RobertBoyle">Robert Boyle</option>
+          <option value="RobertCleaver">Robert Cleaver</option>
+          <option value="RobertCrowley">Robert Crowley</option>
+          <option value="RobertHarris">Robert Harris</option>
+          <option value="RobertSkinner">Robert Skinner</option>
+          <option value="RobertWaring">Robert Waring</option>
+          <option value="RogerFenton">Roger Fenton</option>
+          <option value="SalvianofMarseilles">Salvian of Marseilles</option>
+          <option value="SamuelChidley">Samuel Chidley</option>
+          <option value="SamuelDaniel">Samuel Daniel</option>
+          <option value="SamuelGardiner">Samuel Gardiner</option>
+          <option value="SamuelGarey">Samuel Garey</option>
+          <option value="SamuelGibbons">Samuel Gibbons</option>
+          <option value="SamuelHarsnett">Samuel Harsnett</option>
+          <option value="SamuelPage">Samuel Page</option>
+          <option value="SamuelPurchas">Samuel Purchas</option>
+          <option value="SamuelSmith">Samuel Smith</option>
+          <option value="SebastianBrant">Sebastian Brant</option>
+          <option value="SebastianCastalio">Sebastian Castalio</option>
+          <option value="SebastianVerro">Sebastian Verro</option>
+          <option value="SimonPelegromius">Simon Pelegromius</option>
+          <option value="StephenBredwell">Stephen Bredwell</option>
+          <option value="StephenDenison">Stephen Denison</option>
+          <option value="Suetonius">Suetonius</option>
+          <option value="ThéodoredeBèze">Théodore de Bèze</option>
+          <option value="ThomasBedford">Thomas Bedford</option>
+          <option value="ThomasBell">Thomas Bell</option>
+          <option value="ThomasBilson">Thomas Bilson</option>
+          <option value="ThomasBlount">Thomas Blount</option>
+          <option value="ThomasBrugis">Thomas Brugis</option>
+          <option value="ThomasCole">Thomas Cole</option>
+          <option value="ThomasCollier">Thomas Collier</option>
+          <option value="ThomasCooper">Thomas Cooper</option>
+          <option value="ThomasCranmer">Thomas Cranmer</option>
+          <option value="ThomasCulpeper">Thomas Culpeper</option>
+          <option value="ThomasDawson">Thomas Dawson</option>
+          <option value="ThomasDodson">Thomas Dodson</option>
+          <option value="ThomasDraxe">Thomas Draxe</option>
+          <option value="ThomasGibson">Thomas Gibson</option>
+          <option value="ThomasGoodwin">Thomas Goodwin</option>
+          <option value="ThomasHill">Thomas Hill</option>
+          <option value="ThomasHood">Thomas Hood</option>
+          <option value="ThomasHowes">Thomas Howes</option>
+          <option value="ThomasJohnson">Thomas Johnson</option>
+          <option value="ThomasKillcop">Thomas Killcop</option>
+          <option value="ThomasMay">Thomas May</option>
+          <option value="ThomasMiddleton">Thomas Middleton</option>
+          <option value="ThomasMore">Thomas More</option>
+          <option value="ThomasMorley">Thomas Morley</option>
+          <option value="ThomasMorton">Thomas Morton</option>
+          <option value="ThomasOverbury">Thomas Overbury</option>
+          <option value="ThomasPie">Thomas Pie</option>
+          <option value="ThomasPlayfere">Thomas Playfere</option>
+          <option value="ThomasPowell">Thomas Powell</option>
+          <option value="ThomasRogers">Thomas Rogers</option>
+          <option value="ThomasScot">Thomas Scot</option>
+          <option value="ThomasSmith">Thomas Smith</option>
+          <option value="ThomasSparke">Thomas Sparke</option>
+          <option value="ThomasStrode">Thomas Strode</option>
+          <option value="ThomasWilcox">Thomas Wilcox</option>
+          <option value="ThomasWilson">Thomas Wilson</option>
+          <option value="TimothyKendall">Timothy Kendall</option>
+          <option value="ValentinSchindler">Valentin Schindler</option>
+          <option value="VictorinusStrigel">Victorinus Strigel</option>
+          <option value="Virgil">Virgil</option>
+          <option value="WalterCary">Walter Cary</option>
+          <option value="WalterColman">Walter Colman</option>
+          <option value="WiliamPotter">Wiliam Potter</option>
+          <option value="WilliamBathe">William Bathe</option>
+          <option value="WilliamBirchley">William Birchley</option>
+          <option value="WilliamCarr">William Carr</option>
+          <option value="WilliamClerke">William Clerke</option>
+          <option value="WilliamColson">William Colson</option>
+          <option value="WilliamCovell">William Covell</option>
+          <option value="WilliamCrashaw">William Crashaw</option>
+          <option value="WilliamDell">William Dell</option>
+          <option value="WilliamGurnall">William Gurnall</option>
+          <option value="WilliamHodson">William Hodson</option>
+          <option value="WilliamHolbrooke">William Holbrooke</option>
+          <option value="WilliamHowell">William Howell</option>
+          <option value="WilliamJackson">William Jackson</option>
+          <option value="WilliamLambarde">William Lambarde</option>
+          <option value="WilliamLeigh">William Leigh</option>
+          <option value="WilliamLyford">William Lyford</option>
+          <option value="WilliamMartyn">William Martyn</option>
+          <option value="WilliamNicolson">William Nicolson</option>
+          <option value="WilliamPemble">William Pemble</option>
+          <option value="WilliamPerkins">William Perkins</option>
+          <option value="WilliamSedgwick">William Sedgwick</option>
+          <option value="WilliamShakespeare">William Shakespeare</option>
+          <option value="WilliamSimson">William Simson</option>
+          <option value="WilliamTedder">William Tedder</option>
+          <option value="WilliamWhitaker">William Whitaker</option>
+          <option value="WilliamIngpen">William Ingpen</option>
+          <option value="WolfganMusculus">Wolfgang Musculus</option>
+          <option value="ZachariasUrsinus">Zacharias Ursinus</option>
+        </select>
+    </form>
+    <form>
+      <label><span style="border-bottom: 3px #d5d82c solid">Fragment Type</span></label>
+        <select class="type">
+          <option value="">--</option>
+          <option value="coatofarms">coat of arms</option>
+          <option value="colophon">colophon</option>
+          <option value="decorativeborder">decorative border</option>
+          <option value="decorativeinitial">decorative initial</option>
+          <option value="decorativeornament">decorative ornament</option>
+          <option value="device">device</option>
+          <option value="frontispiece">frontispiece</option>
+          <option value="illustration">illustration</option>
+          <option value="image">image</option>
+          <option value="imprint">imprint</option>
+          <option value="initial">initial</option>
+          <option value="manuscript">manuscript</option>
+          <option value="printersdevice">printer's device</option>
+          <option value="text">text</option>
+          <option value="titlepage">title page</option>
+        </select>
+    </form>
+    <form>
+      <label><span style="border-bottom: 3px #e5323b solid">Publication Date</span></label>
+    </form>
+    <div id="slider">
+      <div id="custom-handle" class="ui-slider-handle"></div>
+    </div>
+    </div>
+
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4360" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fblefr.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4361" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fblefv.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4365" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fs001r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4366" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fs001v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4367" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fs002r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3877" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f001r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3878" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f002r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3879" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f003r.jpg"/></a></div>
+    <div class="thumbnail GuillermusParisiensis JulianNotary 1509 printersdevice titlepage colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3880" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f005r.jpg"/></a></div>
+    <div class="thumbnail MichaelemHilleniumHoochstratanum 1520 titlepage colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3881" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f005v.jpg"/></a></div>
+    <div class="thumbnail FranzBirckman ChristoffelvanRuremund 1525 titlepage text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3882" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f006r.jpg"/></a></div>
+    <div class="thumbnail ReginaldWolfe imprint printersdevice HenryCarre 1589 imprint image"><a href="https://digitalbookhistory.com/johnbagford/items/show/3883" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f006v.jpg"/></a></div>
+    <div class="thumbnail WilliamLambarde RalphNewberry HenryBynneman RichardTottel ChristopherBarker 1581 text EdwardBrerewood JohnBill 1615 titlepage BattistaGuarini GiovanniVolfeo GiacopoCasteluetri 1591 printersdevice"><a href="https://digitalbookhistory.com/johnbagford/items/show/3889" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f007r.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe EdwardWhite 1590 titlepage RichardDay 1586 JohannesBrenz JohnHarrison 1584 image initial ReginaldWolfe 1548 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/3890" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f007v.jpg"/></a></div>
+    <div class="thumbnail ThéodoredeBèze JohnNorton 1590 titlepage BertranddeLoque JohnWolfe 1591 JoanPowel JohnWolfe HenryKirkham 1592 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3891" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f008r.jpg"/></a></div>
+    <div class="thumbnail JohnFoxe ThomasPursut 1583 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3892" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f008v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3893" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f009r.jpg"/></a></div>
+    <div class="thumbnail AdamLittleton TBassett JWright RichardChiswell 1684 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3894" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f009v.jpg"/></a></div>
+    <div class="thumbnail ThomasPetyt 1542 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3896" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f010r.jpg"/></a></div>
+    <div class="thumbnail FelixKingston JohnWolfe 1599 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3897" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f010v.jpg"/></a></div>
+    <div class="thumbnail JohnCosyn JohnWolfe 1585 titlepage BaldassarreCastiglione 1588"><a href="https://digitalbookhistory.com/johnbagford/items/show/3899" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f011r.jpg"/></a></div>
+    <div class="thumbnail VictorinusStrigel JohnWolfe 1582 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3900" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f011v.jpg"/></a></div>
+    <div class="thumbnail LodowickLloyd JohnWolfe 1586 titlepage GiambattistadellaPorta 1591"><a href="https://digitalbookhistory.com/johnbagford/items/show/3902" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f012r.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe 1589 titlepage 1591 image"><a href="https://digitalbookhistory.com/johnbagford/items/show/3903" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f012v.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe 1591 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3904" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f013r.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe 1591 image"><a href="https://digitalbookhistory.com/johnbagford/items/show/3905" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f013v.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe 1591 image"><a href="https://digitalbookhistory.com/johnbagford/items/show/3906" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f014r.jpg"/></a></div>
+    <div class="thumbnail JohnWolfe 1591 image JohnEliot RichardField 1593 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3907" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f014v.jpg"/></a></div>
+    <div class="thumbnail ThomasPie RobertRobinson JohnWolfe 1597 titlepage SamuelHarsnett JohnWindet 1599"><a href="https://digitalbookhistory.com/johnbagford/items/show/3908" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f015r.jpg"/></a></div>
+    <div class="thumbnail EdwardAllde 1620 titlepage JohnWindet JohnWolfe 1599 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/3909" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f015v.jpg"/></a></div>
+    <div class="thumbnail manuscript text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3910" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f016r_1.jpg"/></a></div>
+    <div class="thumbnail StephenBredwell JohnWolfe EdwardWhite 1586 titlepage JamesGodskall RBradock EdwardAllde 1604 ThomasDawson 1596"><a href="https://digitalbookhistory.com/johnbagford/items/show/3911" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f016r.jpg"/></a></div>
+    <div class="thumbnail manuscript text BernardAlsop GeorgeNorton 1622 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3913" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f016v.jpg"/></a></div>
+    <div class="thumbnail ThomasBlount JohnSalusbury HenryHerringman ThomasNewcomb RichardChiswell RichardBentley 1691 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3915" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f017r_1.jpg"/></a></div>
+    <div class="thumbnail JohnNapier RobertWaldegrave JohnNorton 1594 titlepage AnthonyWotton RichardField elizabethburbie 1608"><a href="https://digitalbookhistory.com/johnbagford/items/show/3916" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f017r.jpg"/></a></div>
+    <div class="thumbnail MichaelDrayton ThomasMan 1604 JohnDod HumphreyLownes 1606 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3918" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f017v.jpg"/></a></div>
+    <div class="thumbnail image"><a href="https://digitalbookhistory.com/johnbagford/items/show/3919" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f018r.jpg"/></a></div>
+    <div class="thumbnail Suetonius HumphreyLownes GeorgeSnowdon MatthewLownes 1606 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3920" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f018v.jpg"/></a></div>
+    <div class="thumbnail AlexanderNowell ReginaldWolfe 1570 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3921" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f019a1r_1.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3923" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f019a2r_1.jpg"/></a></div>
+    <div class="thumbnail ThomasDodson HumphreyLownes MatthewLownes 1608 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/3925" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f019r.jpg"/></a></div>
+    <div class="thumbnail Boethius JohnWindet  MatthewLownes 1609 titlepage GeorgeCarleton HumphreyLownes ClementKnight 1611"><a href="https://digitalbookhistory.com/johnbagford/items/show/3926" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f019v.jpg"/></a></div>
+    <div class="thumbnail GiovanniCroce HumphreyLownes MatthewLownes 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3928" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f020r.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HumphreyLownes MatthewLownes 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3929" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f020v.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HumphreyLownes MatthewLownes 1611 LuciusAnnaeusSeneca RobertRobinson ThomasMan ThomasGubbin 1589 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3931" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f021r.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HumphreyLownes MatthewLownes 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3932" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f021v.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HumphreyLownes MatthewLownes 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3933" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f022r.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HumphreyLownes  MatthewLownes 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3934" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f022v.jpg"/></a></div>
+    <div class="thumbnail MatthiasLeius WilliamStansby 1621 titlepage GeorgeAbbot HumphreyLownes RobertMilbourne 1624"><a href="https://digitalbookhistory.com/johnbagford/items/show/3935" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f023r.jpg"/></a></div>
+    <div class="thumbnail WilliamIngpen HumphreyLownes JohnParker 1624 titlepage JW AN RichardLownes 1642"><a href="https://digitalbookhistory.com/johnbagford/items/show/3936" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f023v.jpg"/></a></div>
+    <div class="thumbnail WilliamBirchley JohnGrismond RichardLownes 1653 titlepage BevillTurmiger 1653"><a href="https://digitalbookhistory.com/johnbagford/items/show/3938" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f024r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3939" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f024v.jpg"/></a></div>
+    <div class="thumbnail TimothyKendall JohnKingston 1577 printersdevice  WilliamHill 1548 NicholasHill JohnWight 1553 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3940" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f025r.jpg"/></a></div>
+    <div class="thumbnail JohnClerk JohnHerforde RoberteToye 1547 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3941" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f025v.jpg"/></a></div>
+    <div class="thumbnail JohnKingston 1559 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3942" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f026r.jpg"/></a></div>
+    <div class="thumbnail PaoloManuzio WilliamNorton 1573 titlepage Virgil JohnKingston 1576"><a href="https://digitalbookhistory.com/johnbagford/items/show/3943" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f026v.jpg"/></a></div>
+    <div class="thumbnail ThomasWilson JohnKingston 1560 titlepage 1573 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/3944" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f027r.jpg"/></a></div>
+    <div class="thumbnail PietroMartireVermigli JohnKingston 1576 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3945" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f027v.jpg"/></a></div>
+    <div class="thumbnail AndrewWillet FelixKingston ThomasMan colophon RogerFenton FelixKingston WAspley 1599 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3946" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f028r.jpg"/></a></div>
+    <div class="thumbnail ThomasMorton FelixKingston CuthbertBurbie EdmundWeaver 1605 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3947" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f028v.jpg"/></a></div>
+    <div class="thumbnail PierreDuPloiche JohnKingston GerardDewes 1578 titlepage JohannSpangenberg GerardDewes 1566"><a href="https://digitalbookhistory.com/johnbagford/items/show/3948" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f029r.jpg"/></a></div>
+    <div class="thumbnail JohnHayward JohnFlasket 1607 titlepage JohnDod FelixKingston ThomasMan 1611"><a href="https://digitalbookhistory.com/johnbagford/items/show/3949" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f029v.jpg"/></a></div>
+    <div class="thumbnail RogerFenton WilliamAspley AndrewWillet FelixKingston ThomasMan 1612 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3950" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f030r.jpg"/></a></div>
+    <div class="thumbnail LancelotAndrewes FelixKingston RichardBadger AndrewHebb 1629 titlepage RichardBernard 1616 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3951" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f030v.jpg"/></a></div>
+    <div class="thumbnail Heliodorus WilliamBarret 1622 titlepage RobertHarris FelixKingston ThomasMan 1619"><a href="https://digitalbookhistory.com/johnbagford/items/show/3952" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f031r.jpg"/></a></div>
+    <div class="thumbnail HumfryVincent FelixKingston ThomasDawkes 1642 titlepage SamuelGibbons GeorgePurslowe RalphMab 1616 WilliamBathe RobertYoung GeorgeLathum 1634"><a href="https://digitalbookhistory.com/johnbagford/items/show/3953" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f031v.jpg"/></a></div>
+    <div class="thumbnail MatthieuVirel RobertYoung GeorgeLathum 1633 titlepage ArthurBache TPaine FrancisEglesfield 1640"><a href="https://digitalbookhistory.com/johnbagford/items/show/3954" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f032r.jpg"/></a></div>
+    <div class="thumbnail WilliamLeigh ThomasCreed  ArthurJohnson 1606 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3955" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f032v.jpg"/></a></div>
+    <div class="thumbnail JosephHall WilliamStansby SamuelMacham 1610 JosephHall ArnoldHatfield SamuelMacham 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3956" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f033r.jpg"/></a></div>
+    <div class="thumbnail decorativeborder EdwardGrant HenryBynneman FranciscoColdock 1575 colophon printersdevice"><a href="https://digitalbookhistory.com/johnbagford/items/show/3957" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f033v.jpg"/></a></div>
+    <div class="thumbnail HenryBynneman colophon JanvanderNoot 1569 titlepage ThéodoredeBèze RichardSerl 1566 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/3959" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f034r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3960" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f034v.jpg"/></a></div>
+    <div class="thumbnail Aristotle HenryBynneman 1581 initial SebastianVerro HenryBynneman 1581 AntoniodelCorro 1570 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3961" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f035r.jpg"/></a></div>
+    <div class="thumbnail DesideriusErasmus 1571 titlepage PubliusOvidiusNaso 1572 FrançoisHotman HenryBynneman 1573 JohannSpangenberg"><a href="https://digitalbookhistory.com/johnbagford/items/show/3962" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f035v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3963" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f036r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3964" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f036v.jpg"/></a></div>
+    <div class="thumbnail JohnWhitgift HenryBynneman HumfreyToy 1574 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3965" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f037r.jpg"/></a></div>
+    <div class="thumbnail Appianus RalphNewberry 1578 titlepage GabrielHarvey HenryBynneman"><a href="https://digitalbookhistory.com/johnbagford/items/show/3966" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f037v.jpg"/></a></div>
+    <div class="thumbnail GabrielHarvey HenryBynneman 1578 titlepage "><a href="https://digitalbookhistory.com/johnbagford/items/show/3968" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f038r.jpg"/></a></div>
+    <div class="thumbnail GabrielHarvey HenryBynneman 1578 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3969" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f038v.jpg"/></a></div>
+    <div class="thumbnail EverardDigby HenryBynneman  1579 titlepage ThomasHill"><a href="https://digitalbookhistory.com/johnbagford/items/show/3971" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f039r.jpg"/></a></div>
+    <div class="thumbnail RichardGreenham FelixKingston CuthbertBurbie 1605 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3972" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f039v.jpg"/></a></div>
+    <div class="thumbnail ThomasHill HenryBynneman 1579 titlepage GabrielPowel ArnoldHatfield ThomasManIunior 1605 printersdevice"><a href="https://digitalbookhistory.com/johnbagford/items/show/3973" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f040r.jpg"/></a></div>
+    <div class="thumbnail ThomasBlount ThomasSalusbury HHerringman ThomaasNewcomb RichardChiswell RichardBentley 1691 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3974" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f040v.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser HenryBynneman 1580 EdwardDering EdwardGriffin EdwardBlount 1614 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3978" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f041r.jpg"/></a></div>
+    <div class="thumbnail ChristopherOcland HenryBynneman RalphNewberry 1582 ChristopherOcland titlepage text JanvanderNoot 1569"><a href="https://digitalbookhistory.com/johnbagford/items/show/3979" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f041v.jpg"/></a></div>
+    <div class="thumbnail ChristopherOcland HenryBynneman RalphNewberry 1582 titlepage JohnJewel 1583 RichardHarvey"><a href="https://digitalbookhistory.com/johnbagford/items/show/3980" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f042r.jpg"/></a></div>
+    <div class="thumbnail 1641 titlepage AlexanderNowell ReginaldWolfe 1572"><a href="https://digitalbookhistory.com/johnbagford/items/show/3981" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f042v.jpg"/></a></div>
+    <div class="thumbnail SimonStafford RichardBunnian 1609 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3983" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f043r_1.jpg"/></a></div>
+    <div class="thumbnail HenryArthington RBourne ThomasMan 1592 AlexanderRead JohnHaviland 1638 ThomasScot EdwardGriffin FrancisConstable 1616 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3984" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f043r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3985" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f043v_1.jpg"/></a></div>
+    <div class="thumbnail HenrySmith HumphreyLownes WilliamLeake 1613 titlepage GaspardeLoarte 1594 GeorgePhillips 1597 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/3986" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f043v.jpg"/></a></div>
+    <div class="thumbnail WolfgangMusculus ReginaldWolfe 1563 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3987" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f044r_1.jpg"/></a></div>
+    <div class="thumbnail MartinFotherby HenryBallard ClementKnight WCotton 1608 titlepage ThomasRogers"><a href="https://digitalbookhistory.com/johnbagford/items/show/3988" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f044r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3989" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f044v_1.jpg"/></a></div>
+    <div class="thumbnail WalterBurre 1610 titlepage MathewStoneham GeorgeEld"><a href="https://digitalbookhistory.com/johnbagford/items/show/3990" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f044v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3991" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f045r_1.jpg"/></a></div>
+    <div class="thumbnail HieronymusZanchius JacobusRimeus 1605 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3992" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f045r.jpg"/></a></div>
+    <div class="thumbnail JohnStockwood ThomasJudson JohnHarrison 1598 titlepage ReginaldWolfe colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3993" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f045v_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/3994" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f045v.jpg"/></a></div>
+    <div class="thumbnail JamesCalfhill HenryDenham LucasHarrison 1565 imprint ArthurBrooke 1563 SimonPelegromius JohnHarrison JohnNorton HenryFrancis 1603 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3995" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f046r.jpg"/></a></div>
+    <div class="thumbnail EdmundSpenser WilliamPonsonby 1591 titlepage RichardField WilliamPonsonby 1596"><a href="https://digitalbookhistory.com/johnbagford/items/show/3996" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f046v.jpg"/></a></div>
+    <div class="thumbnail AbrahamFraunce ThomasOrwin WilliamPonsonby 1591 titlepage RichardBarckley RichardField 1598 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/3997" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f047r.jpg"/></a></div>
+    <div class="thumbnail RobertBarret RichardField WilliamPonsonby 1598 coatofarms"><a href="https://digitalbookhistory.com/johnbagford/items/show/3998" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f047v.jpg"/></a></div>
+    <div class="thumbnail RobertBarret RichardField WilliamPonsonby 1598 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/3999" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f048r.jpg"/></a></div>
+    <div class="thumbnail JeandeMarconville JohnWolfe JohnPerin 1592 titlepage PierreViret JohnKingston 1583"><a href="https://digitalbookhistory.com/johnbagford/items/show/4000" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f048v.jpg"/></a></div>
+    <div class="thumbnail ThomasCranmer ReginaldWolfe 1551 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4001" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f049r_1.jpg"/></a></div>
+    <div class="thumbnail GuillaumedeSallusteDuBartas PeterShort WilliamWood 1599 titlepage GiovannidaVigo ThomasEast 1586 ThomasPetyt 1542 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/4002" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f049r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4003" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f049v_1.jpg"/></a></div>
+    <div class="thumbnail BenJonson ValentineSims GeorgeEld  EdwardBlount 1604 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4004" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f049v.jpg"/></a></div>
+    <div class="thumbnail WolfgangMusculus ReginaldWolfe 1563 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4005" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f050r_1.jpg"/></a></div>
+    <div class="thumbnail EdwardHoby FelixKingston EdwasBlount WBarret 1609 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4006" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f050r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4007" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f050v_1.jpg"/></a></div>
+    <div class="thumbnail ThomasCranmer ReginaldWolfe 1551 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4008" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f050v.jpg"/></a></div>
+    <div class="thumbnail WolfgangMusculus ReginaldWolfe 1563 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4009" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f051r_1.jpg"/></a></div>
+    <div class="thumbnail SamuelDaniel ValentineSims EdwardBlount 1603 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4010" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f051r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4011" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f051v_1.jpg"/></a></div>
+    <div class="thumbnail NicolasVignier MelchisedechumBradwood CuthbertBurbie 1607 ChristopherBarker 1584 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4012" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f051v.jpg"/></a></div>
+    <div class="thumbnail WolfgangMusculus ReginaldWolfe 1563 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4014" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f052r_1.jpg"/></a></div>
+    <div class="thumbnail WilliamMartyn JohnBeale RichardRedmer 1613 titlepage 1619"><a href="https://digitalbookhistory.com/johnbagford/items/show/4015" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f052r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4016" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f052v_1.jpg"/></a></div>
+    <div class="thumbnail MatthewSutcliffe MelchisedechumBradwood 1602 titlepage JohnFlorio WilliamStansby EdwardBlount WilliamBarret 1611"><a href="https://digitalbookhistory.com/johnbagford/items/show/4017" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f052v.jpg"/></a></div>
+    <div class="thumbnail WolfgangMusculus ReginaldWolfe 1563 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4018" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f053r_1.jpg"/></a></div>
+    <div class="thumbnail MarcusJunianusJustinus ThomasHaveland 1609 titlepage Misodiaboles EdwardAllde ThomasGubbin 1597"><a href="https://digitalbookhistory.com/johnbagford/items/show/4019" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f053r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4020" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f053v_1.jpg"/></a></div>
+    <div class="thumbnail SamuelGardiner RichardBraddock ValentineSims ThomasBushell 1605 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4021" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f053v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4022" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f054r_1.jpg"/></a></div>
+    <div class="thumbnail ThomasHowes FelixKingston WilliamWelby 1616 titlepage MTulliusCicero JohnI EdmC"><a href="https://digitalbookhistory.com/johnbagford/items/show/4023" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f054r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4024" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f054v_1.jpg"/></a></div>
+    <div class="thumbnail ClementEdmondes MatthewLownes 1604 titlepag JulianNotary imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/4025" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f054v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4026" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f055r_1.jpg"/></a></div>
+    <div class="thumbnail MortonEudes WilliamStansby HenryFeatherstone 1609 titlepage SamuelGarey JohnBeale HenryFeatherstone JohnParker 1618 titlepage SamuelPurchas WilliamStansby HenryFeatherstone 1625 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4027" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f055r.jpg"/></a></div>
+    <div class="thumbnail MatthewGwinne NicholasOkes EdwardBlount 1607 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4029" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f055v.jpg"/></a></div>
+    <div class="thumbnail ThomasSparke NicholasOkes RogerJackson 1607 colophon RichardMiddleton 1619 1609"><a href="https://digitalbookhistory.com/johnbagford/items/show/4031" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f056r.jpg"/></a></div>
+    <div class="thumbnail FriedrichBeurhaus HenryBynneman 1582 colophon ReginaldWolfe 1572 ThomasPetyt 1542 titlepage AlexanderNowell 1573"><a href="https://digitalbookhistory.com/johnbagford/items/show/4032" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f056v.jpg"/></a></div>
+    <div class="thumbnail FrancisQuarles FelixKingston RichardMoore 1620 titlepage JoannesRavisiusTextor HenryBynneman 1581 MantuanusBaptista 1567 colophon manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4033" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f057r.jpg"/></a></div>
+    <div class="thumbnail HenryWright NicholasOkes 1616 titlepage GiovanniBattistaGelli HenryBynneman 1568 SalvianofMarseilles HenryDenham 1580 colophon SebastianVerro 1581 PhilibertdeVienne LucasHarrison GeorgeBishop 1575 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/4034" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f057v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4035" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f058r_1.jpg"/></a></div>
+    <div class="thumbnail JohnJewel ReginaldWolfe 1562 titlepage GeorgeBuck NicholasOkes JohnOkes 1635 Virgil HenryBynneman 1570 titlepage JohnFoord 1582"><a href="https://digitalbookhistory.com/johnbagford/items/show/4036" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f058r.jpg"/></a></div>
+    <div class="thumbnail EphraimPagitt MOkes RobertTrot 1645 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4038" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f058v.jpg"/></a></div>
+    <div class="thumbnail GeorgeDowname AdamIslip ThomasMan 1604 titlepage ThomasCole HenryDenham 1564 imprint WilliamColson NicholasOkes 1612"><a href="https://digitalbookhistory.com/johnbagford/items/show/4039" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f059r.jpg"/></a></div>
+    <div class="thumbnail VictorinusStrigel 1595 titlepage HenochClapham ValentineSims EdmundMutton 1603 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4040" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f059v.jpg"/></a></div>
+    <div class="thumbnail GabrielHarvey HenryBynneman 1578 titlepage HM MatthewLownes 1605 titlepage ThomasGibson ValentineSims 1607"><a href="https://digitalbookhistory.com/johnbagford/items/show/4043" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f060r.jpg"/></a></div>
+    <div class="thumbnail PhilippedeMornay JohnWindet IBing ThomasMan WilliamPonsonby 1600 titlepage HenryDenham 1576 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4044" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f060v.jpg"/></a></div>
+    <div class="thumbnail JorgedeMontemayor EdmundBollifont GeorgeBishop 1598 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4045" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f061r.jpg"/></a></div>
+    <div class="thumbnail EdwardPhilips ArnoldHatfield ElizabethBurbie 1607 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4047" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f061v.jpg"/></a></div>
+    <div class="thumbnail ThomasCooper HenryDenham RalphNewberry 1573 titlepage NehemiahRogers HumphreyLownes EdwardBrewster 1621 RichardJones TH 1655"><a href="https://digitalbookhistory.com/johnbagford/items/show/4050" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f062r.jpg"/></a></div>
+    <div class="thumbnail ThomasWilcox ThomasOrwin ThomasMan 1591 JohannHabermann HenryDenham 1586 colophon JohnWoolton HenryBynneman JohnShepperde 1576 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4051" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f062v.jpg"/></a></div>
+    <div class="thumbnail AnneAskew text Demosthenes HenryDenham 1571 titlepage ReginaldScot titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4054" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f063r.jpg"/></a></div>
+    <div class="thumbnail ThomasCooper HenryDenham RalphNewberry 1573 titlepage EdmundTilney 1577"><a href="https://digitalbookhistory.com/johnbagford/items/show/4055" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f063v.jpg"/></a></div>
+    <div class="thumbnail coatofarms"><a href="https://digitalbookhistory.com/johnbagford/items/show/4056" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f064a1r.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1603 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4058" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f064r_1.jpg"/></a></div>
+    <div class="thumbnail text BaldassarreCastiglione HenryDenham 1577 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4059" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f064r.jpg"/></a></div>
+    <div class="thumbnail AbrahamFleming HenryDenham 1579 colophon text RichardCosin ThomasChard 1584"><a href="https://digitalbookhistory.com/johnbagford/items/show/4061" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f064v.jpg"/></a></div>
+    <div class="thumbnail WalterCary JohnWindet HenryDenham 1586 titlepage RichardKnolles AdamIslip 1603 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4062" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f065r.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1603 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4063" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f065v.jpg"/></a></div>
+    <div class="thumbnail InnocentGentillet AdamIslip 1608 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4064" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f066r.jpg"/></a></div>
+    <div class="thumbnail JohnUdall PeterShort ThomasMan 1595 titlepage LeSylvain AdamIslip 1596"><a href="https://digitalbookhistory.com/johnbagford/items/show/4065" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f066v.jpg"/></a></div>
+    <div class="thumbnail ThomasMorley PeterShort 1597 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4066" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f067r.jpg"/></a></div>
+    <div class="thumbnail ThomasHood RichardField RobertDexter 1596 titlepage ThomasSparke RobertRobinson 1597"><a href="https://digitalbookhistory.com/johnbagford/items/show/4067" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f067v.jpg"/></a></div>
+    <div class="thumbnail PeterMoffett RobertRobinson RobertDexter 1596 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4069" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f068r.jpg"/></a></div>
+    <div class="thumbnail SebastianCastalio RobertDexter 1601 titlepage FriedrichBeurhaus HenryBynneman 1581 colophon JohnGibson RichardField 1599"><a href="https://digitalbookhistory.com/johnbagford/items/show/4070" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f068v.jpg"/></a></div>
+    <div class="thumbnail FriedrichBeurhaus HenryBynneman 1581 colophon JosephHall RichardBraddock  RobertDexter 1599 titlepage 1572 JohnPym ROulton GDexter JohnRothwell 1642"><a href="https://digitalbookhistory.com/johnbagford/items/show/4074" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f069r.jpg"/></a></div>
+    <div class="thumbnail AdamLittleton SRoycroft RichardMarriott 1679 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4075" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f069v.jpg"/></a></div>
+    <div class="thumbnail WilliamGurnall MWhite RalphSmith 1679 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4076" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f070r.jpg"/></a></div>
+    <div class="thumbnail RichardBaxter RobertWhite NevillSimons 1675 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4077" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f070v.jpg"/></a></div>
+    <div class="thumbnail RichardMadox JohnCharlewood 1581 titlepage WilliamTedder WilliamBrome ThomasGubbin 1588 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/4078" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f071r.jpg"/></a></div>
+    <div class="thumbnail JohnHuise DM ThomasDavies 1659 titlepage GeorgeDowname AdamIslip ThomasMan 1604"><a href="https://digitalbookhistory.com/johnbagford/items/show/4079" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f071v.jpg"/></a></div>
+    <div class="thumbnail Aristotle AdamIslip 1598 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4080" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f072r.jpg"/></a></div>
+    <div class="thumbnail decorativeborder decorativeinitial decorativeornament"><a href="https://digitalbookhistory.com/johnbagford/items/show/4082" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f072v.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1609 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4086" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f073c1r.jpg"/></a></div>
+    <div class="thumbnail PierreViret ThomasDawson JohnPerin 1583 text decorativeborder"><a href="https://digitalbookhistory.com/johnbagford/items/show/4087" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f073r.jpg"/></a></div>
+    <div class="thumbnail initial"><a href="https://digitalbookhistory.com/johnbagford/items/show/4088" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f073v.jpg"/></a></div>
+    <div class="thumbnail text RichardKnolles AdamIslip 1609 illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4090" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f074r.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1609 illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4092" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f074v.jpg"/></a></div>
+    <div class="thumbnail text RichardKnolles AdamIslip 1609 illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4093" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f075r.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1609 illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4094" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f075v.jpg"/></a></div>
+    <div class="thumbnail RichardKnolles AdamIslip 1609 illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4095" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f076r.jpg"/></a></div>
+    <div class="thumbnail CristóbaldeFonseca AdamIslip 1629 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4097" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f076v.jpg"/></a></div>
+    <div class="thumbnail text WilliamClerke AdamIslip 1594 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4099" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f077r.jpg"/></a></div>
+    <div class="thumbnail JohnPrideaux HenryHall HenryCripps HenryCurteyn ThomasRobinson 1648 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4100" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f077v.jpg"/></a></div>
+    <div class="thumbnail CorneliusAntoniszoon AdamIslip 1600 titlepage text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4101" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f078r.jpg"/></a></div>
+    <div class="thumbnail EdwardDering HenryDenham HumfreyToy 1568 titlepage MarcelloPalingenioStellato 1565 MosesPflacher EdmundBollifant GeorgeBishop 1587"><a href="https://digitalbookhistory.com/johnbagford/items/show/4102" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f078v.jpg"/></a></div>
+    <div class="thumbnail CharlesGibbon ThomasOrwin 1589 titlepage LeonardDigges 1592"><a href="https://digitalbookhistory.com/johnbagford/items/show/4103" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f079r.jpg"/></a></div>
+    <div class="thumbnail ChristopherHooke ThomasOrwin HenryHooke 1590 titlepage MilesMosse WidowOrwin ThomasMan 1595"><a href="https://digitalbookhistory.com/johnbagford/items/show/4104" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f079v.jpg"/></a></div>
+    <div class="thumbnail GuillaumedeSallusteDuBartas RichardWatkins 1596 titlepage ThomasOrwin  AugustineLawton 1590 LevinusLemnius 1587 MatthewSutcliffe EdmundBollifant 1600"><a href="https://digitalbookhistory.com/johnbagford/items/show/4105" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f080r.jpg"/></a></div>
+    <div class="thumbnail JohnLeland ThomasOrwin 1589 titlepage text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4107" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f080v.jpg"/></a></div>
+    <div class="thumbnail ThomasCooper GeorgeEld TAdams 1609 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4108" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f081b1r.jpg"/></a></div>
+    <div class="thumbnail BenJonson ValentineSims GeorgeEld EdwardBlount 1604 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4109" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f081r.jpg"/></a></div>
+    <div class="thumbnail NielsHemmingsen JohnWolfe GeorgeBishop ThomasWodcocke 1585 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4110" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f081v.jpg"/></a></div>
+    <div class="thumbnail JohnKnewstubs LucasHarrison 1578 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4111" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f082r.jpg"/></a></div>
+    <div class="thumbnail NielsHemmingsen ThomasEast ThomasWoodcock GregorySeton 1577 titlepage ThéodoredeBèze ThomasDawson 1581"><a href="https://digitalbookhistory.com/johnbagford/items/show/4112" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f082v.jpg"/></a></div>
+    <div class="thumbnail JosephMede RogerNorton RichardRoyston 1672 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4115" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f083r.jpg"/></a></div>
+    <div class="thumbnail RichardJugge JohnCawood 1559 titlepage AntonyKitson 1555 colophon RichardJugge 1575 FriedrichBeurhaus HenryBynneman 1581"><a href="https://digitalbookhistory.com/johnbagford/items/show/4116" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f083v.jpg"/></a></div>
+    <div class="thumbnail RichardJugge colophon JohnCawood 1559 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4117" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f084r.jpg"/></a></div>
+    <div class="thumbnail AntoniusCorvinus ReginaldWolfe 1550 titlepage MarcusTulliusCicero JohnJackson EdmundBollifant 1585 SebastianBrant JohnCawood 1570 colophon"><a href="https://digitalbookhistory.com/johnbagford/items/show/4118" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f084v.jpg"/></a></div>
+    <div class="thumbnail typespecimen"><a href="https://digitalbookhistory.com/johnbagford/items/show/4119" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f085r.jpg"/></a></div>
+    <div class="thumbnail DesideriusErasmus HenryMiddleton 1573 titlepage JoannesSusenbrotus 1574 RobertHarris GeorgePurslowe JohnBartlet 1626"><a href="https://digitalbookhistory.com/johnbagford/items/show/4120" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f085v.jpg"/></a></div>
+    <div class="thumbnail HeinrichBullinger HenryMiddleton RalphNewberry HughJackson 1587 imprint printersdevice typespecimen"><a href="https://digitalbookhistory.com/johnbagford/items/show/4121" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f086r.jpg"/></a></div>
+    <div class="thumbnail LaurenceHumphrey HenryMiddleton GeorgeBishop 1582 titlepage RichardMayo ThomasParkhurst 1679"><a href="https://digitalbookhistory.com/johnbagford/items/show/4122" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f086v.jpg"/></a></div>
+    <div class="thumbnail NBradshawe RobertBird 1635 titlepage HenryMiddleton ThomasVautrollier 1581 ThomasPowell GeorgePurslowe BenjaminFisher 1623 ThéodoredeBèze HenryBynneman GeorgeBishop 1571"><a href="https://digitalbookhistory.com/johnbagford/items/show/4126" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f087r.jpg"/></a></div>
+    <div class="thumbnail PierreViret 1582 titlepage WilliamWhittaker HenryMiddleton ThomasChard 1583"><a href="https://digitalbookhistory.com/johnbagford/items/show/4128" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f087v.jpg"/></a></div>
+    <div class="thumbnail Aristotle HenryMiddleton GeorgeBishop 1583 titlepage JohannPiscator JohnHarrison"><a href="https://digitalbookhistory.com/johnbagford/items/show/4129" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f088b1r.jpg"/></a></div>
+    <div class="thumbnail PL HLloyd DixyPage 1672 text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4130" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f088r.jpg"/></a></div>
+    <div class="thumbnail LaurenceHumphrey HenryMiddleton GeorgeBishop 1584 PaoloManuzio RobertRobinson 1591 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4131" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f088v.jpg"/></a></div>
+    <div class="thumbnail ThomasSmith HenryMiddleton GregorySeton 1584 titlepage ZachariasUrsinus ThomasChard 1586"><a href="https://digitalbookhistory.com/johnbagford/items/show/4132" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f089r.jpg"/></a></div>
+    <div class="thumbnail RichardKilburne ThomasMabb HenryAtkinson 1659 ThomasGoodwin TJ PeterParker 1668 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4133" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f089v.jpg"/></a></div>
+    <div class="thumbnail RichardParr NathanaelRanew 1686 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4134" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f090r.jpg"/></a></div>
+    <div class="thumbnail ArthurStandish WilliamStansby 1612 manuscript SamuelSmith 1627 titlepage RichardMeighen 1621 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/4135" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f090v.jpg"/></a></div>
+    <div class="thumbnail illustration JohnRainolds WilliamStansby HenryFeatherstone 1619 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4136" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f091r.jpg"/></a></div>
+    <div class="thumbnail JohnRichardson TR EM JohnRothwell 1655 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4137" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f091v.jpg"/></a></div>
+    <div class="thumbnail FrancisMeres PeterShort CuthbertBurbie RobertCrowley JohnCharlewood ThomasWoodcock 1588 titlepage WilliamCooper 1678 Boethius JacobTonson JamesRound 1712"><a href="https://digitalbookhistory.com/johnbagford/items/show/4138" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f092r.jpg"/></a></div>
+    <div class="thumbnail RichardBaxter RobertWhite NevillSimons 1675 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4139" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f092v.jpg"/></a></div>
+    <div class="thumbnail AbrahamVele 1557 colophon ThomasMore RichardTottel AbrahamVele 1556 titlepage GeorgeBuchanan GeorgeEld 1620 WilliamShakespeare ThomasCotes JohnBenson 1640"><a href="https://digitalbookhistory.com/johnbagford/items/show/4140" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f093r.jpg"/></a></div>
+    <div class="thumbnail ThomasBilson ValentineSims ClementKnight 1603 titlepage WilliamCovell GeorgeSnowdon 1606"><a href="https://digitalbookhistory.com/johnbagford/items/show/4141" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f093v.jpg"/></a></div>
+    <div class="thumbnail WalterCary JohnWindet HenryDenham 1584 JohnTichborne NicholasOkes ClementKnight 1609 text JohnStanbridge ThomasPurfoot 1629 titlepage illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4145" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f094r.jpg"/></a></div>
+    <div class="thumbnail PhilippusFerrarius RogerDaniel 1657 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4146" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f094v.jpg"/></a></div>
+    <div class="thumbnail JeanCalvin JohnWindet NicholasLyng 1584 titlepage LewisEvans HenryDenham 1568"><a href="https://digitalbookhistory.com/johnbagford/items/show/4147" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f095r.jpg"/></a></div>
+    <div class="thumbnail JamesUssher JFlesher LSadler 1650 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4148" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f095v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4149" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f096a1r_1.jpg"/></a></div>
+    <div class="thumbnail PhilippusFerrarius RogerDaniel 1657 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4151" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f096a1v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4152" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f096a2r_1.jpg"/></a></div>
+    <div class="thumbnail PhilippusFerrarius RogerDaniel 1657 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4153" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f096a2r.jpg"/></a></div>
+    <div class="thumbnail PL HLloyd DixyPage 1672 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4155" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f096v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4156" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f097r_1.jpg"/></a></div>
+    <div class="thumbnail JohnWhite RichardField WilliamBarret 1614 titlepage AbelRoper JBaker 1712"><a href="https://digitalbookhistory.com/johnbagford/items/show/4157" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f097r.jpg"/></a></div>
+    <div class="thumbnail JohnStevens GeorgeSawbridge 1706 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4159" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f097v.jpg"/></a></div>
+    <div class="thumbnail ThomasPlayfere FelixKingston NathanaelisFosbrooke ThomasChard 1607 GervaseBabington JamesRoberts 1596 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4160" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f098r.jpg"/></a></div>
+    <div class="thumbnail HermanMoll TimothyChilde 1701 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4161" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f098v.jpg"/></a></div>
+    <div class="thumbnail JeandeHainault ThomasCreed 1602 titlepage LodowickLloyd 1602"><a href="https://digitalbookhistory.com/johnbagford/items/show/4162" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f099r.jpg"/></a></div>
+    <div class="thumbnail JohannesPolyanderàKerckhoven FelixKingston ThomasMan 1610 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4163" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f099v.jpg"/></a></div>
+    <div class="thumbnail RobertCleaver ThomasSnodham ThomasMan 1614 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4164" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f100r.jpg"/></a></div>
+    <div class="thumbnail WilliamCrashaw HenryLownes EdmundWeaver 1608 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4165" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f100v.jpg"/></a></div>
+    <div class="thumbnail MatthewSutcliffe EdwardAllde RichardSerger EdmundWeaver 1606 titlepage ThomasMorton RichardField 1609"><a href="https://digitalbookhistory.com/johnbagford/items/show/4166" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f101r.jpg"/></a></div>
+    <div class="thumbnail RobertBolton FelixKingston EdmundWeaver 1612 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4167" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f101v.jpg"/></a></div>
+    <div class="thumbnail JohnNorton JoyceNorton RichardWhittaker 1633 WilliamJackson WilliamJones EdmundWeaver 1616 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4168" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f102r.jpg"/></a></div>
+    <div class="thumbnail EdwardElton JL ChristopherMeredith 1653 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4169" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f102v.jpg"/></a></div>
+    <div class="thumbnail RichardBrathwait RichardField 1621 KarlLudwig AnneGriffin RichardWhittaker 1637 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4170" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f103r.jpg"/></a></div>
+    <div class="thumbnail ThomasBrugis TH MH ThomasWhittaker 1648 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4171" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f103v.jpg"/></a></div>
+    <div class="thumbnail ThomasMorton RichardBadger RichardWhittaker 1638 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4172" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f104r.jpg"/></a></div>
+    <div class="thumbnail ThomasMay JHaviland JamesBoler 1630 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4173" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f105r.jpg"/></a></div>
+    <div class="thumbnail manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4174" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f106a1r_1.jpg"/></a></div>
+    <div class="thumbnail manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4175" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f106a1v_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4176" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f106a2r_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4177" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f106a2v_2.jpg"/></a></div>
+    <div class="thumbnail JohnBainbridge EdwardGriffin JohnParker 1619 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4178" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f106r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4179" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f107r.jpg"/></a></div>
+    <div class="thumbnail JohnLeech ThomasHarper GW 1628 titlepage 1628"><a href="https://digitalbookhistory.com/johnbagford/items/show/4180" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f107v.jpg"/></a></div>
+    <div class="thumbnail SamuelPage ThomasHarper 1637 titlepage ThomasDraxe RichardWhittaker 1631"><a href="https://digitalbookhistory.com/johnbagford/items/show/4181" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f108r.jpg"/></a></div>
+    <div class="thumbnail RichardBadger RAllot 1632 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4182" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f108v.jpg"/></a></div>
+    <div class="thumbnail WilliamHall RalphMab 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4183" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f109r.jpg"/></a></div>
+    <div class="thumbnail OliverOrmerod EdwardAllde NathanielFosbroke NathanielFosbroke 1605 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4184" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f109v.jpg"/></a></div>
+    <div class="thumbnail WilliamPerkins CuthbertBurbie 1607 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4185" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f110r.jpg"/></a></div>
+    <div class="thumbnail PeterShort 1599 GeorgeEld WilliamAspley 1604 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4186" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f111r.jpg"/></a></div>
+    <div class="thumbnail WalterColman WilliamStansby 1632 WilliamSimson JohnWoodcock 1617 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4187" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f112r.jpg"/></a></div>
+    <div class="thumbnail JohnGeree RobertBostock 1649 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4188" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f112v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4189" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f113r.jpg"/></a></div>
+    <div class="thumbnail ClaudiusHollyband JN JoshuaKirton ThomasWarren TK 1641 JodocusStimpelius JacobJuni 1647 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4190" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f114r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4191" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f115r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4192" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f116r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4193" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f117r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4194" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f118r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4195" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f118v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4196" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f119r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4197" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f119v.jpg"/></a></div>
+    <div class="thumbnail JohnHuise AugustineMatthews RichardThrale 1633 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4198" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f120r.jpg"/></a></div>
+    <div class="thumbnail ThomasStrode WGodbid EnochWyer 1678 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4199" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f120v.jpg"/></a></div>
+    <div class="thumbnail ThomasBedford JohnField PhilemonStephens 1647 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4200" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f121r.jpg"/></a></div>
+    <div class="thumbnail FernandodeTejeda ThomasSnodham RobertMilbourne 1623 titlepage GeorgeCarleton JohnDawson HumphreyRobinson 1624"><a href="https://digitalbookhistory.com/johnbagford/items/show/4201" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f121v.jpg"/></a></div>
+    <div class="thumbnail DanielFeatley 1626 StephenDenison GeorgeMiller RobertMilbourne 1627 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4202" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f122r.jpg"/></a></div>
+    <div class="thumbnail JeremiahDyke WilliamStansby RobertMilbourne 1631 titlepage AugustineMatthews 1632"><a href="https://digitalbookhistory.com/johnbagford/items/show/4203" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f122v.jpg"/></a></div>
+    <div class="thumbnail JohnClarke AugustineMatthews RobertMilbourn 1632 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4204" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f123r.jpg"/></a></div>
+    <div class="thumbnail AgricolaCarpenter JohnBrowne 1652 imprint"><a href="https://digitalbookhistory.com/johnbagford/items/show/4205" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f123v.jpg"/></a></div>
+    <div class="thumbnail GeorgeCarleton JohnDawson RobertMilbourne HumphreyRobinson 1624 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4206" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f124r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4207" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f124v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4209" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f125r.jpg"/></a></div>
+    <div class="thumbnail GuillaumeMorel HenryBynneman  RichardHutton 1583 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4210" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f125v.jpg"/></a></div>
+    <div class="thumbnail JohnBaret HenryDenham WilliamSeres 1580 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4211" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f126r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4212" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f126v.jpg"/></a></div>
+    <div class="thumbnail RandleCotgrave AdamIslip 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4213" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f127r.jpg"/></a></div>
+    <div class="thumbnail ValentinSchindler WilliamJohns 1637 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4214" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f127v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4215" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f128r.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4216" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f128v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4217" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f129_1.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4218" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f129r_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4219" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f129r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4220" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f129v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4221" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f130r.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4222" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f131r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4223" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f132r.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4224" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f133r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4225" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f134r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4226" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f135r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4227" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f142r.jpg"/></a></div>
+    <div class="thumbnail ThomasJohnson ThomasCotes 1632 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4228" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f142v.jpg"/></a></div>
+    <div class="thumbnail AmbroiseParé ThomasCotes RobertYoung 1634 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4229" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f143r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4230" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f143v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4231" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a1r_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4232" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a1v_1.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4233" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a2r_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4234" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a2v_1.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4235" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a3r_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4236" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a3v_1.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4237" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144a4v_1.jpg"/></a></div>
+    <div class="thumbnail ThomasCotes 1640 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4238" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4239" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f144v.jpg"/></a></div>
+    <div class="thumbnail WilliamHolbrooke JohnWindet NathanielButter 1610 titlepage RS 1607"><a href="https://digitalbookhistory.com/johnbagford/items/show/4240" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f145r.jpg"/></a></div>
+    <div class="thumbnail GeorgeBuddle JohnWindet MatthewLaw 1609 JohnSanford ThomasHaviland NathanielButter 1611 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4241" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f145v.jpg"/></a></div>
+    <div class="thumbnail WilliamStansby NathanielButter 1615 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4242" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f146r.jpg"/></a></div>
+    <div class="thumbnail EdwardGriffin NathanielButter 1619 PatrickHannay JohnHaviland 1622 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4243" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f146v.jpg"/></a></div>
+    <div class="thumbnail PatrickHannay JohnHaviland NathanielButter 1622 GeorgeWebbe MilesFlesher 1624 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4244" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f147r.jpg"/></a></div>
+    <div class="thumbnail device GryffithWilliams ThomasSnodham  NathanielButter 1624 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4245" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f147v.jpg"/></a></div>
+    <div class="thumbnail GryffithWilliams ThomasCotes HumphreyMoseley 1635 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4246" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f148r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4247" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f148v.jpg"/></a></div>
+    <div class="thumbnail RobertArnaulddAndilly HumphreyMoseley 1660 JohnRaymond 1648 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4248" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f149r.jpg"/></a></div>
+    <div class="thumbnail ThomasBell ThomasCreed SimonStafford ThomasPurfoot WilliamWelby 1605 ThomasCooper FelixKingston 1610 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4249" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f149v.jpg"/></a></div>
+    <div class="thumbnail ThomasCooper JohnBeale WilliamWelby 1615 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4250" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f150r.jpg"/></a></div>
+    <div class="thumbnail ThomasOverbury EliotsCourtPress HenrySeile LaurenceLisle 1622 JohnWillis GeorgePurslowe 1632 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4251" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f150v.jpg"/></a></div>
+    <div class="thumbnail JohnPrideaux ElizabethPurslowe HenrySeile 1634 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4252" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f151r.jpg"/></a></div>
+    <div class="thumbnail ChristopherSutton AmbroseGarbrand 1613 JohnWilkins MF SamuelGellibrand 1646 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4253" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f151v.jpg"/></a></div>
+    <div class="thumbnail FrancisCheynell MilesFlesher SamuelGellibrand 1647 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4254" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f152r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4255" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f152v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4256" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f156r.jpg"/></a></div>
+    <div class="thumbnail WilliamPemble RobertYoung JohnBartlet 1631 titlepage RobertSkinner 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4257" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f156v.jpg"/></a></div>
+    <div class="thumbnail FrancisRous RobertYoung JohnBartlet 1641 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4258" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f157r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4259" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f157v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4260" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f158r.jpg"/></a></div>
+    <div class="thumbnail EdmundGostlin JohnStreater 1646 NathanaelHomes RichardBishop JasperEmery 1640 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4261" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f158v.jpg"/></a></div>
+    <div class="thumbnail JohnCotton SamuelSatterthwaite 1642 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4262" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f159r.jpg"/></a></div>
+    <div class="thumbnail AT RichardBadger PhilemonStephens ChristopherMeredith 1630 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4263" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f159v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4264" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f160r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4265" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f160v.jpg"/></a></div>
+    <div class="thumbnail RCoates ChristopherMeredith 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4266" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f161r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4267" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f161v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4268" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f162r.jpg"/></a></div>
+    <div class="thumbnail MartinBlake CharlesGreen MartinBlake 1645 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4269" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f162v.jpg"/></a></div>
+    <div class="thumbnail JohnSaltmarsh RobertYoung PhilipNevill 1640 BI 1651 titlepage SamuelChidley"><a href="https://digitalbookhistory.com/johnbagford/items/show/4270" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f163r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4271" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f163v.jpg"/></a></div>
+    <div class="thumbnail DanielCawdrey TH PeterWhaley 1645 RichardJanua NathanielPonder 1680 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4272" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f164r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4273" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f164v.jpg"/></a></div>
+    <div class="thumbnail RobertWaring RogerDaniel 1657 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4274" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f165r.jpg"/></a></div>
+    <div class="thumbnail FrancoPetriBurgersdijk 1651 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4275" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f165v.jpg"/></a></div>
+    <div class="thumbnail JohnSadler AnneGriffin PhilemonStephens ChristopherMeredith 1636 text RogerDaniel SamuelThomson 1655 DanielStahl JohnWilliams 1651 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4276" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f166r.jpg"/></a></div>
+    <div class="thumbnail JohannStier RogerDaniel 1659 JohnStanbridge ThomasRooks 1664 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4277" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f166v.jpg"/></a></div>
+    <div class="thumbnail RichardAllestree TimothyGarthwait 1660 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4278" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f167r.jpg"/></a></div>
+    <div class="thumbnail GeorgeMorley RogerNorton TimothyGarthwait 1662 titlepage RichardLee RichardRoyston JWilliams 1663 imprint printersdevice"><a href="https://digitalbookhistory.com/johnbagford/items/show/4279" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f167v.jpg"/></a></div>
+    <div class="thumbnail MatthewWren DMaxwell TimothyGarthwait 1662 titlepage JohnDolben 1665 imprint printersdevice BenjaminLaney 1665"><a href="https://digitalbookhistory.com/johnbagford/items/show/4280" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f168r.jpg"/></a></div>
+    <div class="thumbnail ObadiahBlagrave 1678 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4281" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f168v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4282" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f169r.jpg"/></a></div>
+    <div class="thumbnail ClaudiusHollyband JohnHaviland ThomasAlcorn ThomasKnight 1636 Aristotle ThomasCotes AndrewCrook 1637 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4283" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f169v.jpg"/></a></div>
+    <div class="thumbnail WilliamHodson PrinterstotheUniversityofCambridge AndrewCrook 1636 DavidDickson GeorgeAnderson AegidioCalbert 1647 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4284" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f170r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4285" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f170v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4286" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f171r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4287" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f171v.jpg"/></a></div>
+    <div class="thumbnail MartinoMartini JohnCrook 1655 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4288" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f172r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4289" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f172v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4290" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f173r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4291" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f173v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4292" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f174b1r.jpg"/></a></div>
+    <div class="thumbnail JohnFidoe GilesCalvert 1649 FrancisRoberts ThomasRatcliffe EdwardMottershed  GeorgeCalvert 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4293" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f174r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4294" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f174v.jpg"/></a></div>
+    <div class="thumbnail WilliamSedgwick HHils GilesCalvert 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4295" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f178r.jpg"/></a></div>
+    <div class="thumbnail ThomasCollier GilesCalvert 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4296" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f178v.jpg"/></a></div>
+    <div class="thumbnail ThomasKillcop HH GilesCalvert 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4298" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f179r.jpg"/></a></div>
+    <div class="thumbnail JohnWarr GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4299" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f179v.jpg"/></a></div>
+    <div class="thumbnail GerrardWinstanley GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4300" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f180r.jpg"/></a></div>
+    <div class="thumbnail WilliamDell GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4301" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f180v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4302" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f181a1r.jpg"/></a></div>
+    <div class="thumbnail GerrardWinstanley GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4303" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f181r.jpg"/></a></div>
+    <div class="thumbnail WilliamDell GilesCalvert 1649 manuscript PeterChamberlen"><a href="https://digitalbookhistory.com/johnbagford/items/show/4304" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f181v.jpg"/></a></div>
+    <div class="thumbnail GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4307" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f182r.jpg"/></a></div>
+    <div class="thumbnail GilesCalvert 1649 manuscript ThomasCollier 1648"><a href="https://digitalbookhistory.com/johnbagford/items/show/4308" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f182v.jpg"/></a></div>
+    <div class="thumbnail HenryHaggar GilesCalvert 1655 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4309" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f183r.jpg"/></a></div>
+    <div class="thumbnail HenryDanvers GilesCalvert 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4310" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f183v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4311" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f184c1r.jpg"/></a></div>
+    <div class="thumbnail JohnFry GilesCalvert 1650 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4312" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f184r.jpg"/></a></div>
+    <div class="thumbnail GilesCalvert 1651 JohnLilburne JohnClowes manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4313" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f184v.jpg"/></a></div>
+    <div class="thumbnail WiliamPotter RAA GilesCalvert 1650 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4314" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f185r.jpg"/></a></div>
+    <div class="thumbnail LeonardSowerby GeorgeCalvert RIbbitson 1652 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4315" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f185v.jpg"/></a></div>
+    <div class="thumbnail HHills GilesCalvert TBrewster 1653 JohnWebster 1653 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4316" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f186r.jpg"/></a></div>
+    <div class="thumbnail WilliamSedgwick HHills GilesCalvert 1648 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4317" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f186v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4318" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f187r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4319" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f187v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4320" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f188r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4321" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f188v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4322" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f189r.jpg"/></a></div>
+    <div class="thumbnail HenryHammond RichardRoyston 1648 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4323" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f189v.jpg"/></a></div>
+    <div class="thumbnail JohnMilton JMacock JamesAllestry 1670 titlepage JohnGauden RichardRoyston 1649 manuscript"><a href="https://digitalbookhistory.com/johnbagford/items/show/4324" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f200r.jpg"/></a></div>
+    <div class="thumbnail HenryHammond RichardRoyston 1649 manuscript JohnGauden titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4325" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f200v.jpg"/></a></div>
+    <div class="thumbnail RobertBoreman 1651 AnthonySadler JohnGrismond RichardRoyston 1654 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4326" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f201r.jpg"/></a></div>
+    <div class="thumbnail WilliamLyford JohnGrismond RichardRoyston 1654 titlepage DanielFeatley 1660"><a href="https://digitalbookhistory.com/johnbagford/items/show/4327" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f201v.jpg"/></a></div>
+    <div class="thumbnail illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4328" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f202r.jpg"/></a></div>
+    <div class="thumbnail JohnGregory MClark RichardRoyston BenjaminTooke ThomasSawbridge 1684 titlepage illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4329" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f202v.jpg"/></a></div>
+    <div class="thumbnail JeremyTaylor titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4330" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f203r.jpg"/></a></div>
+    <div class="thumbnail RalphCudworth RichardRoyston 1678 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4331" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f203v.jpg"/></a></div>
+    <div class="thumbnail JeremyTaylor RogerNorton RichardRoyston 1676 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4332" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f204r.jpg"/></a></div>
+    <div class="thumbnail JohnCrump RobertSollers 1683 RichardChiswell 1689 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4333" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f204v.jpg"/></a></div>
+    <div class="thumbnail JamesLowde ThomasWarren WalterKettilby 1694 AdamShewring CharlesBrome 1696 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4334" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f205r.jpg"/></a></div>
+    <div class="thumbnail GeorgeBate SamuelSmith BenjaminWalford 1694 titlepage JohnNorris JohnJones 1698"><a href="https://digitalbookhistory.com/johnbagford/items/show/4335" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f205v.jpg"/></a></div>
+    <div class="thumbnail RobertBoyle ThomasBennet JohnWyat JPhillips JTaylor 1700 JohnNorris SManship 1698 JohnMilner HC JohnJones 1698 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4336" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f206r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4337" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f206v.jpg"/></a></div>
+    <div class="thumbnail illustration"><a href="https://digitalbookhistory.com/johnbagford/items/show/4338" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f207r.jpg"/></a></div>
+    <div class="thumbnail GregorioLeti RandallTaylor 1687 WilliamHowell ThomasMercer AbelSwalle 1679 1687 Euclid titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4339" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f207v.jpg"/></a></div>
+    <div class="thumbnail titlepage ThomasBell RobertBoulter 1677"><a href="https://digitalbookhistory.com/johnbagford/items/show/4340" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f208r.jpg"/></a></div>
+    <div class="thumbnail JohnMonro GeorgeWells AbelSwalle 1687 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4341" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f208v.jpg"/></a></div>
+    <div class="thumbnail GeorgeBate AbelSwalle 1685 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4342" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f209r.jpg"/></a></div>
+    <div class="thumbnail FrancoisMauriceau AbelSwalle 1688 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4343" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f209v.jpg"/></a></div>
+    <div class="thumbnail JohannAmosComenius JR AbelSwalle 1689 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4344" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f210r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4345" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f211a1v.jpg"/></a></div>
+    <div class="thumbnail JohnSleidan AbelSwalle HenryBonwick SamuelRavenshaw 1689 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4346" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f211r.jpg"/></a></div>
+    <div class="thumbnail WilliamCarr TimothyChilde 1691 CharlesMolloy AbelSwalle 1690 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4347" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f211v.jpg"/></a></div>
+    <div class="thumbnail ThomasChapman RichardParker RandallTaylor AbelSwalle TimothyChilde 1694 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4348" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f212r.jpg"/></a></div>
+    <div class="thumbnail LouisElliesDupin AbelSwalle 1691 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4349" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f212v.jpg"/></a></div>
+    <div class="thumbnail LouisElliesDuPin AbelSwalle TimothyChilde 1696 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4350" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f213r.jpg"/></a></div>
+    <div class="thumbnail abbédeVertot AbelSwalle TimothyChilde 1696 FrancisBacon 1691 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4351" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f213v.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4352" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f214r.jpg"/></a></div>
+    <div class="thumbnail EWhitlock 1697 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4353" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f214v.jpg"/></a></div>
+    <div class="thumbnail WilliamNicolson 1699 AbelSwalle TimothyChilde 1696 titlepage"><a href="https://digitalbookhistory.com/johnbagford/items/show/4354" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f215r.jpg"/></a></div>
+    <div class="thumbnail text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4355" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f215v.jpg"/></a></div>
+    <div class="thumbnail MD JohnNutt 1703 titlepage Ovid RobertYoung JohnGrismond 1628 frontispiece text"><a href="https://digitalbookhistory.com/johnbagford/items/show/4356" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f216r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4357" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f216v.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4358" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f217r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4359" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_f0443c1r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4368" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fse001r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4369" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fse002r.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4362" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fbrigr.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4363" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fbrigv.jpg"/></a></div>
+    <div class="thumbnail"><a href="https://digitalbookhistory.com/johnbagford/items/show/4364" target="_blank"><img src="http://digitalbookhistory.com/johnbagford/files/thumbnails/msharley5927/harl_5927_fbspi.jpg"/></a></div>
+  </body>
+</html>
